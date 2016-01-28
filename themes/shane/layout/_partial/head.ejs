@@ -1,0 +1,54 @@
+  <head>
+    <meta charset="utf-8">
+    <%
+    var title = page.title;
+
+    if (is_archive()){
+      title = 'Blog';
+
+      if (is_month()){
+        title += ': ' + page.year + '/' + page.month;
+      } else if (is_year()){
+        title += ': ' + page.year;
+      }
+    } else if (is_category()){
+      title = 'Category: ' + page.category;
+    } else if (is_tag()){
+      title = 'Tag: ' + page.tag;
+    }
+    %>
+    <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%- open_graph({twitter_id: theme.twitter_id, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+    <% if (theme.rss){ %>
+      <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+    <% if (theme.favicon){ %>
+      <link rel="shortcut icon" href="<%- theme.favicon %>">
+    <% } %>
+    <% if (config.highlight.enable){ %>
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <% } %>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<%- config.root %>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome CSS -->
+    <link href="<%- config.root %>css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <!-- Animate css -->
+    <link href="<%- config.root %>css/animate.css" rel="stylesheet">
+    <!-- Magnific css -->
+    <link href="<%- config.root %>css/magnific-popup.css" rel="stylesheet">
+    <!-- Custom styles CSS -->
+    <link href="<%- config.root %>css/style.css" rel="stylesheet" media="screen">
+    <!-- Responsive CSS -->
+    <link href="<%- config.root %>css/responsive.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <%- partial('google-analytics') %>
+  </head>

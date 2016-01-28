@@ -1,0 +1,57 @@
+<!-- Resume Section -->
+<section id="resume" class="resume-section section-padding">
+  <div class="container">
+    <h2 class="section-title wow fadeInUp">Resume</h2>
+    <% for (category in site.data.resume) { %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="resume-title">
+          <h3><%= category %></h3>
+        </div>
+        <div class="resume">
+          <ul class="timeline">
+            <% var idx = 0 %>
+            <% for (position in site.data.resume[category]) { %>
+            <% idx++ %>
+            <% if (idx % 2 === 0) { %> 
+            <li class="timeline">
+            <% } else { %>
+            <li class="timeline-inverted">
+            <% } %>
+              <div class="posted-date">
+                <span class="month"><%= site.data.resume[category][position].start %><br/>&mdash;<br/><%= site.data.resume[category][position].end %></span>
+              </div>
+              <!-- /posted-date -->
+
+              <div class="timeline-panel wow fadeInUp">
+                <div class="timeline-content">
+                  <div class="timeline-heading">
+                    <h3><%= site.data.resume[category][position].title %></h3>
+                    <span><%= site.data.resume[category][position].company %> - <%= site.data.resume[category][position].location %></span>
+                  </div>
+                  <!-- /timeline-heading -->
+
+                  <div class="timeline-body">
+                    <ul>
+                      <% for (listItem in site.data.resume[category][position].details) { %>
+                        <li><%= site.data.resume[category][position].details[listItem] %></li>
+                      <% } %>
+                    </ul>
+                  </div>
+                  <!-- /timeline-body -->
+                </div>
+                <!-- /timeline-content -->
+              </div>
+              <!-- /timeline-panel -->
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+    <% } %>
+  </div>
+  <!-- /.container -->
+</section>
+<!-- End Resume Section -->
