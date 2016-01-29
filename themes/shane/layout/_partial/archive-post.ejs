@@ -1,6 +1,43 @@
-<article class="archive-article archive-type-<%= post.layout %>">
-  <header class="archive-article-header">
-    <%- partial('post/title', {class_name: 'archive-article-title'}) %>
-    <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMMM Do'}) %>
-  </header>
+<div class="col-sm-4">
+<article class="blog-post-wrapper archive-type-<%= post.layout %>">
+  <div class="figure">    
+    <div class="post-thumbnail">
+      <a href="#"><img src="images/blog/01.jpg" class="img-responsive " alt=""></a>
+    </div>
+      <i class="fa fa-file-photo-o"></i>
+  </div><!-- /.figure -->
+  <header class="entry-header">
+    <div class="post-meta">
+      <span class="the-category"> 
+        <a href="#">Print Design,</a> <a href="#">Photoshop</a>
+      </span>
+    </div>
+    <h2 class="entry-title"><%= post.title || '(no title)' %></h2>
+    <hr>
+    <div class="entry-meta">
+      <ul class="list-inline">
+        <li>
+          <span class="the-author">
+            <a href="#">Admin</a> 
+          </span>
+        </li>
+        <li>
+          <span class="the-time">
+            <a href="#">/a>
+          </span>
+        </li>
+        <li>
+          <span class="the-share">
+            <a href="#" title="share">30</a>
+          </span>
+        </li>
+        <li>
+          <span class="the-comments">
+            <a href="#" title="">05</a>
+          </span>
+        </li>
+      </ul>
+    </div><!-- .entry-meta -->
+  </header><!-- .entry-header -->
 </article>
+</div><!-- /.col-sm-4 -->
