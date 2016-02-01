@@ -1244,6 +1244,15 @@ Resume Timeline
     padding: 0 12px;
 }
 .post-meta {}
+.post-meta li.article-tag-list-item {
+    display: inline;
+}
+.post-meta li.article-tag-list-item:after {
+    content: ", "
+}
+.post-meta li.article-tag-list-item:last-child:after {
+    content: " ";
+}
 .the-category a {
     font-size: 12px;
     line-height: 28px;

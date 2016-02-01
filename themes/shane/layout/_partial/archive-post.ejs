@@ -9,7 +9,7 @@
   <header class="entry-header">
     <div class="post-meta">
       <span class="the-category"> 
-        <a href="#">Print Design,</a> <a href="#">Photoshop</a>
+        <%- partial('post/tag') %>
       </span>
     </div>
     <h2 class="entry-title"><%= post.title || '(no title)' %></h2>
@@ -17,13 +17,8 @@
     <div class="entry-meta">
       <ul class="list-inline">
         <li>
-          <span class="the-author">
-            <a href="#">Admin</a> 
-          </span>
-        </li>
-        <li>
           <span class="the-time">
-            <a href="#">/a>
+            <a href="#"><%= post.date %></a>
           </span>
         </li>
         <li>
