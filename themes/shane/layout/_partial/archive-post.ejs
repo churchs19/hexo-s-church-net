@@ -1,38 +1,40 @@
-<div class="col-sm-4">
 <article class="blog-post-wrapper archive-type-<%= post.layout %>">
-  <div class="figure">    
-    <div class="post-thumbnail">
-      <a href="#"><img src="images/blog/01.jpg" class="img-responsive " alt=""></a>
+    <div class="figure">
+        <div class="post-thumbnail">
+            <a href="#"><img src="images/blog/01.jpg" class="img-responsive " alt=""></a>
+        </div>
+        <i class="fa fa-file-photo-o"></i>
     </div>
-      <i class="fa fa-file-photo-o"></i>
-  </div><!-- /.figure -->
-  <header class="entry-header">
-    <div class="post-meta">
-      <span class="the-category"> 
-        <%- partial('post/tag') %>
-      </span>
-    </div>
-    <h2 class="entry-title"><%= post.title || '(no title)' %></h2>
-    <hr>
-    <div class="entry-meta">
-      <ul class="list-inline">
-        <li>
-          <span class="the-time">
-            <a href="#"><%= post.date %></a>
+    <!-- /.figure -->
+    <header class="entry-header">
+        <div class="post-meta">
+            <span class="the-category"> 
+                <%- partial('post/tag') %>
+            </span>
+        </div>
+        <h2 class="entry-title"><%= post.title || '(no title)' %></h2>
+        <div class="entry-meta">
+            <ul class="list-inline">
+                <li>
+                    <span class="the-time">
+            <%- partial('post/date', {class_name: 'article-date', date_format: config.date_format}) %>
           </span>
-        </li>
-        <li>
-          <span class="the-share">
-            <a href="#" title="share">30</a>
-          </span>
-        </li>
-        <li>
-          <span class="the-comments">
+                </li>
+                <li>
+                    <span class="the-share">
+                      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">
+                        <i class="fa fa-share"></i> Share
+                      </a>
+                    </span>
+                </li>
+                <li>
+                    <span class="the-comments">
             <a href="#" title="">05</a>
           </span>
-        </li>
-      </ul>
-    </div><!-- .entry-meta -->
-  </header><!-- .entry-header -->
+                </li>
+            </ul>
+        </div>
+        <!-- .entry-meta -->
+    </header>
+    <!-- .entry-header -->
 </article>
-</div><!-- /.col-sm-4 -->

@@ -3,10 +3,10 @@
       <div class="container">
         <h2 class="section-title wow fadeInUp">Latest Posts</h2>
 
-        <div class="row">
+        <div class="flex-container">
             <% if (site.posts.length){ %>              
                   <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
-                    <%- partial('_partial/archive-post', {post: post}) %>
+                    <%- partial('_partial/archive-post', {post: post, index: true}) %>
                   <% }) %>
             <% } %>
         </div><!-- /.row -->

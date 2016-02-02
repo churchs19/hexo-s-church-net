@@ -14,7 +14,7 @@
     3. Home
     4. Navigation
     5. About
-    6. Video
+    6. Photos
     7. Resume
     8. Skill
     9. Chart
@@ -567,41 +567,98 @@ SOCIAL ICON
     border-bottom: 0;
 }
 
-/* === Video Section === */
+/* === Photos Section === */
 
-.video-section {
-    background: url(../images/video-bg.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    background-size: cover;
+.photos-section ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.photos-section ul li {
+    float: left;
+    height: 25vw;
+    width: 25%;
+    background-color: #000;
+    list-style: none;
     position: relative;
 }
-.video-section .tf-bg-overlay {
-    min-height: 500px;
+.photos-section figure {
+    position: relative;
+    overflow: hidden;
 }
-.video-intro {
+.photos-section figure img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.photos-section figure:hover img,
+.photos figure:focus img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.photos-section figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25% 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(73, 72, 142, 0.85);
+    text-align: center;
+    font-size: 15px;
+    opacity: 0;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.photos-section figcaption a {
+    color: #fff;
+}
+.photos-section figcaption a:hover,
+.photos-section figcaption a:focus {
+    color: #49488E;
+}
+.photos-section figure:hover figcaption,
+.photos-section figure:focus figcaption {
+    opacity: 1;
+}
+.photos-section .visible {
+    opacity: 1;
+}
+.photos-section figure.cs-hover figcaption {
+    opacity: 1;
+}
+.photos-section figcaption i {
+    font-size: 35px;
+}
+.photos-section figcaption p {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.photos-section figcaption .caption-content {
     position: absolute;
     top: 50%;
-    margin-top: -50px;
-    left: 0;
-    right: 0;
-    color: #fff;
-    background: none;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -100px;
+    width: 200px;
+    -webkit-transform: translate(0, 15px);
+    -ms-transform: translate(0, 15px);
+    -moz-transform: translate(0, 15px);
+    -o-transform: translate(0, 15px);
+    transform: translate(0, 15px);
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
-.video-intro i {
-    border: 1px solid #fff;
-    width: 80px;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 5px;
-    font-size: 18px;
-}
-.video-intro h2 {
-    margin-top: 30px;
-    text-transform: uppercase;
-}
-.video-intro .play-trigger {
-    border: 0;
-    background: transparent;
+.photos-section figure:hover figcaption .caption-content,
+.photos-section figure:focus figcaption .caption-content {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
 }
 
 /* === Resume Section === */
@@ -1188,10 +1245,20 @@ Resume Timeline
 /* === Blog Section === */
 
 .latest-blog-section {}
+.latest-blog-section .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
 .blog-post-wrapper {
     padding: 4px;
     border: 1px solid #eee;
     border-bottom: 3px double #eee;
+    margin-right: 20px;
+    width: calc(33% - 13.34px);
+    /* Width - (total space between columns per row / number of columns per row) */
+}
+.blog-post-wrapper:nth-of-type(3n) {
+    margin-right: 0;
 }
 .figure {
     position: relative;
@@ -1270,6 +1337,11 @@ Resume Timeline
 .entry-title a:hover {
     color: #49488e;
 }
+.entry-summary {
+    max-height: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 .entry-meta {
     color: #afafaf;
 }
@@ -1321,6 +1393,12 @@ Icon for all respective meta
     font-family: FontAwesome;
     position: absolute;
     left: 0;
+}
+.the-author div,
+.the-time div,
+.the-share div,
+.the-comments div {
+    display: inline;
 }
 
 /* === Hire Section === */

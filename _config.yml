@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.s-church.net
 root: /
-permalink: /blog/entry/:id/
+permalink: blog/entry/:id/
 permalink_defaults:
 
 # Directory
@@ -52,8 +52,8 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: MM-DD-YYYY
-time_format: HH:mm:ss
+date_format: MMM D YYYY
+time_format: h:mm a
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -84,3 +84,5 @@ archive_generator:
   
 sitemap:
   path: sitemap.xml
+  
+disqus_shortname: s-church
