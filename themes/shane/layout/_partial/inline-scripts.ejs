@@ -1,15 +1,30 @@
+<% if (config.disqus_shortname){ %>
+<script>
+  var disqus_shortname = '<%= config.disqus_shortname %>';
+  <% if (page.permalink){ %>
+  var disqus_url = '<%= page.permalink %>';
+  <% } %>
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<% } %>
+
 <%- js('js/jquery') %>
+<%- js('js/lodash') %>
 <%- js('bootstrap/js/bootstrap.min') %>
 <%- js('js/jquery.stellar.min') %>
 <%- js('js/jquery.sticky') %>
 <%- js('js/smoothscroll') %>
 <%- js('js/wow.min') %>
-<%- js('js/jquery.countTo') %>
 <%- js('js/jquery.inview.min') %>
-<%- js('js/jquery.easypiechart') %>
-<%- js('js/jquery.shuffle.min') %>
-<%- js('js/jquery.magnific-popup.min') %>
-<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-<%- js('js/jquery.fitvids') %>
-<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>-->
+
+<% if (theme.fancybox){ %>
+  <%- js('fancybox/jquery.fancybox.pack') %>
+<% } %>
+
 <%- js('js/scripts') %>

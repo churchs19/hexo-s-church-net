@@ -37,7 +37,11 @@
     <!-- Animate css -->
     <link href="<%- config.root %>css/animate.css" rel="stylesheet">
     <!-- Magnific css -->
-    <link href="<%- config.root %>css/magnific-popup.css" rel="stylesheet">
+<!--    <link href="<%- config.root %>css/magnific-popup.css" rel="stylesheet">-->
+<% if (theme.fancybox){ %>
+      <!-- Fancybox -->
+    <%- css('fancybox/jquery.fancybox') %>
+<% } %>
     <!-- Custom styles CSS -->
     <link href="<%- config.root %>css/style.css" rel="stylesheet" media="screen">
     <!-- Responsive CSS -->

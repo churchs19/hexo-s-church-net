@@ -1,9 +1,4 @@
-/*
-Theme Name: IAMX
-Author: Trendy Theme
-Author URL: trendytheme.net
-*/
-
+/*global jQuery, WOW, _ */
 /*
     = Preloader
     = Animated scrolling / Scroll Up
@@ -15,21 +10,17 @@ Author URL: trendytheme.net
     = More skill
     = Shuffle
     = Magnific Popup
-    = Vidio auto play
-    = Fit Vids
-    = Google Map
-
 */
 
 jQuery(function ($) {
 
     'use strict';
 
-    /* ---------------------------------------------- /*
-     * Preloader
-    /* ---------------------------------------------- */
+    // ---------------------------------------------- 
+    // Preloader
+    // ----------------------------------------------
 
-    $(window).ready(function() {
+    $(window).ready(function () {
         $('#pre-status').fadeOut();
         $('#tt-preloader').delay(350).fadeOut('slow');
     });
@@ -42,7 +33,7 @@ jQuery(function ($) {
     // -------------------------------------------------------------
 
     (function () {
-        $('a[href*=#]').bind("click", function(e){
+        $('a[href*=#]').bind("click", function (e) {
             var anchor = $(this);
             $('html, body').stop().animate({
                 scrollTop: $(anchor.attr('href')).offset().top
@@ -59,7 +50,7 @@ jQuery(function ($) {
     (function () {
         $(".tt-fullHeight").height($(window).height());
 
-        $(window).resize(function(){
+        $(window).resize(function () {
             $(".tt-fullHeight").height($(window).height());
         });
 
@@ -78,7 +69,7 @@ jQuery(function ($) {
         $('body').scrollspy({
             target: '.navbar-custom',
             offset: 70
-        })
+        });
     }());
 
 
@@ -89,7 +80,7 @@ jQuery(function ($) {
     // -------------------------------------------------------------
 
     (function () {
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('.scroll-up').fadeIn();
             } else {
@@ -100,54 +91,34 @@ jQuery(function ($) {
 
 
     // -------------------------------------------------------------
-    // Countup
-    // -------------------------------------------------------------
-    $('.count-wrap').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
-        if (visible) {
-            $(this).find('.timer').each(function () {
-                var $this = $(this);
-                $({ Counter: 0 }).animate({ Counter: $this.text() }, {
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function () {
-                        $this.text(Math.ceil(this.Counter));
-                    }
-                });
-            });
-            $(this).unbind('inview');
-        }
-    });
-
-
-    // -------------------------------------------------------------
     // Progress Bar
     // -------------------------------------------------------------
- 
-    $('.skill-progress').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
+
+    $('.skill-progress').bind('inview', function (event, visible, visiblePartX, visiblePartY) {
         if (visible) {
-            $.each($('div.progress-bar'),function(){
-                $(this).css('width', $(this).attr('aria-valuenow')+'%');
+            $.each($('div.progress-bar'), function () {
+                $(this).css('width', $(this).attr('aria-valuenow') + '%');
             });
             $(this).unbind('inview');
         }
     });
-    
+
     // -------------------------------------------------------------
     // More skill
     // -------------------------------------------------------------
-    $('.more-skill').bind('inview', function(event, visible, visiblePartX, visiblePartY) {
+    $('.more-skill').bind('inview', function (event, visible, visiblePartX, visiblePartY) {
         if (visible) {
             $('.chart').easyPieChart({
                 //your configuration goes here
                 easing: 'easeOut',
                 delay: 3000,
-                barColor:'#68c3a3',
-                trackColor:'rgba(255,255,255,0.2)',
+                barColor: '#68c3a3',
+                trackColor: 'rgba(255,255,255,0.2)',
                 scaleColor: false,
                 lineWidth: 8,
                 size: 140,
                 animate: 2000,
-                onStep: function(from, to, percent) {
+                onStep: function (from, to, percent) {
                     this.el.children[0].innerHTML = Math.round(percent);
                 }
 
@@ -156,105 +127,17 @@ jQuery(function ($) {
         }
     });
 
-
-    // -------------------------------------------------------------
-    // Shuffle
-    // -------------------------------------------------------------
-
-    (function () {
-
-        var $grid = $('#grid');
-
-        $grid.shuffle({
-            itemSelector: '.portfolio-item'
-        });
-
-        /* reshuffle when user clicks a filter item */
-        $('#filter a').click(function (e) {
-            e.preventDefault();
-
-            // set active class
-            $('#filter a').removeClass('active');
-            $(this).addClass('active');
-
-            // get group name from clicked item
-            var groupName = $(this).attr('data-group');
-
-            // reshuffle grid
-            $grid.shuffle('shuffle', groupName );
-        });
-
-
-    }());
-
-
-    // -------------------------------------------------------------
-    // Magnific Popup
-    // -------------------------------------------------------------
-
-    (function () {
-      $('.image-link').magnificPopup({
-
-        gallery: {
-          enabled: true
-        },
-        removalDelay: 300, // Delay in milliseconds before popup is removed
-        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
-        type:'image'
-
-      });
-
-    }());
-
-
-
-    // -------------------------------------------------------------
-    // Fit Vids
-    // -------------------------------------------------------------
-    (function () {
-        $(".video-container").fitVids();
-    }());
-
-
-
-    // -------------------------------------------------------------
-    // Vidio auto play
-    // -------------------------------------------------------------
-    (function () {
-    
-    /* Vimeo API: http://developer.vimeo.com/player/js-api */
-    
-        var iframe = document.getElementById('nofocusvideo');
-        // $f == Froogaloop
-        var player = $f(iframe);
-
-        $('.modal').on('hidden.bs.modal', function () {
-        player.api('pause');
-        })
-
-        $('.modal').on('shown.bs.modal', function () {
-        player.api('play');
-        })
-    }());
-
-
-
-
     // -------------------------------------------------------------
     // STELLAR FOR BACKGROUND SCROLLING
     // -------------------------------------------------------------
 
-    $(window).load(function() {
-
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-         
-        }else {
+    $(window).load(function () {
+        if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
             $.stellar({
                 horizontalScrolling: false,
                 responsive: true
             });
         }
-
     });
 
 
@@ -266,16 +149,36 @@ jQuery(function ($) {
 
         new WOW({
 
-            mobile:  false
+            mobile: false
 
         }).init();
 
     }());
 
 
+    // -------------------------------------------------------------
+    //  Instagram Feed
+    // -------------------------------------------------------------
+    // https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432
+    $(document).ready(function () {
+        if ($('.photos-section').length > 0) {
+            var $grid = $('.photos-section ul.grid');
+            var compiled = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt="<%- caption.text %>"><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image"><i class="fa fa-search"></i><p><%- caption.text %></p></a></div></figcaption></figure></li>');
+            $.ajax({
+                url: 'https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432',
+                crossDomain: true,
+                dataType: 'jsonp',
+                cache: false,
+                success: function (response) {
+                    for (var i = 0; i < Math.min(8, response.data.length); i++) {
+                        console.log(compiled(response.data[i]));
+                        $grid.append(compiled(response.data[i]));
+                    }
+                    $grid.find("a.single_image").fancybox({
+                        padding: 4
+                    });
+                }
+            });
+        }
+    });
 });
-
-
-
-
-
