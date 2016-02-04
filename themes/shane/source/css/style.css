@@ -242,9 +242,11 @@ button:focus {
 
 /*IMAGES*/
 
+/*
 img {
     width: 100%;
 }
+*/
 hr {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -273,6 +275,33 @@ ul.list-check li::before {
     font-family: fontawesome;
     color: #49488E;
     margin-right: 10px;
+}
+
+/* === FANCYBOX === */
+.fancybox-overlay {
+    background: rgba(33, 32, 64, 0.85);
+}
+
+.fancybox-title {
+    font-family: 'robotoregular';
+    color: #fff;
+}
+
+.fancybox-title a,
+.fancybox-title a:hover,
+.fancybox-title a:active,
+.fancybox-title a:visited {
+    color: #fff;
+}
+
+.fancybox-title-float-wrap .child {
+    border-radius: 0;
+    text-shadow: none;
+}
+
+.fancybox-nav {
+    top: 30%;
+    height: 40%;
 }
 
 /* === MAIN === */

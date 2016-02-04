@@ -1,0 +1,11 @@
+{
+    "extends": "eslint:recommended",
+    "root": true,
+    "rules": {
+        "quotes": [2, "single", "avoid-escape"]
+    },
+    "env": {
+        "browser": true,
+        "jquery": true
+    }
+}
