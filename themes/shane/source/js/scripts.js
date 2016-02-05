@@ -171,7 +171,7 @@ jQuery(function ($) {
                 dataType: 'jsonp',
                 cache: false,
                 success: function (response) {
-                    for (var i = 0; i < Math.min(8, response.data.length); i++) {
+                    for (var i = 0; i < Math.min(10, response.data.length); i++) {
                         if (response.data[i].type === 'video') {
                             $grid.append(videoTemplate(response.data[i]));
                         } else {

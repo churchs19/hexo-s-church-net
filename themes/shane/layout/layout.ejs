@@ -2,11 +2,12 @@
 <html>
 <%- partial('_partial/head') %>
 <body>
+  <div id="top"></div>
   <%- body %>
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   <!-- Scroll-up -->
   <div class="scroll-up">
-      <a href="#home"><i class="fa fa-angle-up"></i></a>
+      <a href="#top"><i class="fa fa-angle-up"></i></a>
   </div>
   <%- partial('_partial/inline-scripts') %>
 </body>

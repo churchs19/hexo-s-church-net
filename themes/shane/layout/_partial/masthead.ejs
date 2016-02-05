@@ -1,35 +1,43 @@
 <!-- Navigation -->
 <header class="header">
-  <nav class="navbar navbar-custom" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <% if (theme.navbar_brand){ %>
-          <a class="navbar-brand" href="<%- config.root %>" title="<%= config.title %>"><img src="<%- theme.navbar_brand %>" alt="<%= config.title %>"/></a>
-        <% } %>
-      </div>
+    <nav class="navbar navbar-custom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <% if (theme.navbar_brand){ %>
+                    <a class="navbar-brand" href="<%- config.root %>" title="<%= config.title %>"><img src="<%- theme.navbar_brand %>" alt="<%= config.title %>"/></a>
+                    <% } %>
+            </div>
 
-      <div class="collapse navbar-collapse" id="custom-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#photos">Photos</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <% if (theme.rss){ %>
-            <li><a href="<%- theme.rss %>" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
-          <% } %>
-        </ul>
-      </div>
-    </div>
-    <!-- .container -->
-  </nav>
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li>
+                        <a href="#projects" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/WhatIEat">What I Eat</a></li>
+                            <li><a href="/StirlingBirthday">Stirling Birthday</a></li>
+                            <li><a href="/StirlingMoney">Stirling Money</a></li>
+                            <li><a href="/OlderProjects">Older</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <% if (theme.rss){ %>
+                        <li><a href="<%- theme.rss %>" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+                        <% } %>
+                </ul>
+            </div>
+        </div>
+        <!-- .container -->
+    </nav>
 </header>
 <!-- End Navigation -->
