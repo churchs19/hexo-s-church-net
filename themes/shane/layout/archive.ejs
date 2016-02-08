@@ -1,2 +1,9 @@
+<%- partial('_partial/preloader') %>
 <%- partial('_partial/masthead-secondary') %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">        
 <%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
+        </div>
+    </div>
+</div>

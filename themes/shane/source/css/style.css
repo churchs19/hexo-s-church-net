@@ -1139,6 +1139,13 @@ Resume Timeline
     background: url('../../images/what-i-eat-home-bg.jpg') no-repeat center center;
     background-size: cover;
 }
+
+.gallery-cell.stirling-birthday {
+    background: url('../../images/stirling-birthday-home-bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
 /* === Facts Section === */
 
 .facts-section {
@@ -1546,4 +1553,11 @@ Icon for all respective meta
     margin: 0;
     text-align: center;
     top: 65%;
+}
+
+
+/* Archives Page */
+.archives {
+    display: flex;
+    flex-wrap: wrap;    
 }
