@@ -10,10 +10,8 @@ fancybox: true
 widgets:
 - about         # See also: `about_content`
 - category
-- tag
 - tagcloud
 - archive
-- recent_posts
 about_widget_content: >
   <p>Etiam porta <em>sem malesuada magna</em> mollis euismod.
   Cras mattis consectetur purus sit amet fermentum. Aenean

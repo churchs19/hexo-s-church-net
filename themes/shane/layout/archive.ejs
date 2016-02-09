@@ -1,9 +1,30 @@
 <%- partial('_partial/preloader') %>
 <%- partial('_partial/masthead-secondary') %>
-<div class="container">
+<div class="container page-container">
     <div class="row">
-        <div class="col-xs-12">        
-<%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
+        <div class="col-sm-9">
+<%
+    var title = page.title;
+
+    if (is_archive()){
+      title = 'Blog';
+
+      if (is_month()){
+        title += ': ' + moment(page.month + '-1-' + page.year).format('MMMM YYYY');
+      } else if (is_year()){
+        title += ': ' + page.year;
+      }
+    } else if (is_category()){
+      title = 'Category: ' + page.category;
+    } else if (is_tag()){
+      title = 'Tag: ' + page.tag;
+    }
+%>
+            <h2 class="section-title wow fadeInUp"><% if (title){ %><%= title %><% } else { %><%= config.title %><% } %></h2>
+            <%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
+        </div>
+        <div class="col-sm-3 blog-sidebar">
+            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
         </div>
     </div>
 </div>

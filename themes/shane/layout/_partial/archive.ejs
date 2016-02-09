@@ -5,15 +5,15 @@
 <% } else { %>
   <% var last; %>
   <% page.posts.each(function(post, i){ %>
-    <% var year = post.date.year(); %>
-    <% if (last != year){ %>
+    <% var archiveDate = post.date.format("MMMM YYYY"); %>
+    <% if (last != archiveDate){ %>
       <% if (last != null){ %>
         </div></section>
       <% } %>
-      <% last = year; %>
+      <% last = archiveDate; %>
       <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+        <div class="archive-date-wrap">
+          <a href="<%- url_for(config.archive_dir + '/' + post.date.format('YYYY') + '/' + post.date.format('MM')) %>" class="archive-year"><%= archiveDate %></a>
         </div>
         <div class="archives">
     <% } %>
