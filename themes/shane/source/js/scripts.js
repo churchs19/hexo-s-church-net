@@ -201,4 +201,36 @@ jQuery(function ($) {
             });
         }
     });
+    
+    // -------------------------------------------------------------
+    // Scalable Images
+    // -------------------------------------------------------------
+    $(document).ready(function () {
+        $('img.scale').imageScale();        
+    });
+    
+    // -------------------------------------------------------------
+    // Image Gallery
+    // -------------------------------------------------------------
+    $(document).ready(function () {
+        $('a.image-link')
+            .fancybox({
+                padding: 4,
+                beforeShow: function () {
+//                    this.title = '<a href="' + $(this.element).attr('data-link') + '" target="_blank">' + $(this.element).attr('title') + '</a>';
+                },
+                beforeLoad: function () {
+//                    if($(this.element).hasClass('fancybox.html')) {
+//                        // build the HTML5 video structure for fancyBox content with specific parameters
+//                        // set fancyBox content and pass parameters
+//                        this.content = '<video src="' + this.href + '"  poster="' + $(this.element).attr('data-poster') + '" width="' + $(this.element).attr('data-width') + '" height="' + $(this.element).attr('data-height') + '"  controls="controls" preload="none" ></video>';
+//                        // set fancyBox dimensions
+//                        this.width = $(this.element).attr('data-width');
+//                        this.height = $(this.element).attr('data-height');
+//                    }
+                }
+
+            });
+
+    });
 });

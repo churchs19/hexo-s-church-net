@@ -1,9 +1,12 @@
 <%- partial('_partial/preloader') %>
-<%- partial('_partial/masthead') %>
-<div class="container">
+<%- partial('_partial/masthead-secondary') %>
+<div class="container page-container">
     <div class="row">
-        <div class="col-xs-12">        
-            <%- partial('_partial/article', {post: page, index: false}) %>
+        <div class="col-sm-9">        
+            <%- partial('_partial/article', {post: page, index: false, hideDate: true}) %>
+        </div>
+        <div class="col-sm-3 blog-sidebar">
+            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
         </div>
     </div>
 </div>

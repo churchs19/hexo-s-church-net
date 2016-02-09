@@ -5,7 +5,9 @@
   </header>
 
   <div class="article-meta">
+    <% if (!hideDate) { %>
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+    <% } %>
     <% if (post.author){ %><div class="article-author"><%= post.author %></div><% } %>
     <%- partial('post/category') %>
   </div>
