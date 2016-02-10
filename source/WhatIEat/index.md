@@ -5,15 +5,15 @@ permalink: WhatIEat/
 comments: false
 alias: WhatIEat/WindowsPhone/
 photos:
-- /software/windowsphone/whatieat/0.png
-- /software/windowsphone/whatieat/1.png
-- /software/windowsphone/whatieat/2.png
-- /software/windowsphone/whatieat/3.png
-- /software/windowsphone/whatieat/4.png
-- /software/windowsphone/whatieat/5.png
-- /software/windowsphone/whatieat/6.png
-- /software/windowsphone/whatieat/7.png
-- /software/windowsphone/whatieat/8.png
+- /software/windowsphone/whatieat/0.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/1.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/2.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/3.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/4.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/5.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/6.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/7.png|What I Eat Screenshot
+- /software/windowsphone/whatieat/8.png|What I Eat Screenshot
 ---
 ### A simple food journal for Windows Phone
 

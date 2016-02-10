@@ -1,7 +1,9 @@
 <article class="blog-post-wrapper archive-type-<%= post.layout %>">
     <div class="figure">
         <div class="post-thumbnail">        
-            <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.photos[0]) %>" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
+            <% if(post.photos && post.photos.length >= 1) { %>
+            <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.photos[0].split('|')[0]) %>" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
+            <% } %>
         </div>
         <i class="fa fa-file-photo-o"></i>
     </div>
