@@ -8,14 +8,10 @@ fancybox: true
 
 # Sidebar
 widgets:
-- about         # See also: `about_content`
+- about
 - category
 - tagcloud
 - archive
-about_widget_content: >
-  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod.
-  Cras mattis consectetur purus sit amet fermentum. Aenean
-  lacinia bibendum nulla sed consectetur.</p>
 
 # widget behavior
 archive_type: 'monthly'

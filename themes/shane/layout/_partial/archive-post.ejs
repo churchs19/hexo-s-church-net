@@ -5,7 +5,7 @@
             <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.photos[0].split('|')[0]) %>" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
             <% } %>
         </div>
-        <i class="fa fa-file-photo-o"></i>
+        <span><img src="/images/SCLogo-Transparent.svg" alt=""/></span>
     </div>
     <!-- /.figure -->
     <header class="entry-header">
@@ -14,7 +14,8 @@
                 <%- partial('post/tag') %>
             </span>
         </div>
-        <a href="<%- url_for(post.path) %>"><h2 class="entry-title"><%= post.title || '(no title)' %></h2></a>
+        <a href="<%- url_for(post.path) %>"><h3 class="entry-title"><%= post.title || '(no title)' %></h3></a>
+        <p><%- truncate(strip_html(post.content),{length: 100}) %></p>
         <div class="entry-meta">
             <ul class="list-inline">
                 <li>

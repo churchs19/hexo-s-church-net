@@ -13,7 +13,7 @@
       <% last = archiveDate; %>
       <section class="archives-wrap">
         <div class="archive-date-wrap">
-          <a href="<%- url_for(config.archive_dir + '/' + post.date.format('YYYY') + '/' + post.date.format('MM')) %>" class="archive-year"><%= archiveDate %></a>
+            <a href="<%- url_for(config.archive_dir + '/' + post.date.format('YYYY') + '/' + post.date.format('MM')) %>" class="archive-year"><h2><%= archiveDate %></h2></a>
         </div>
         <div class="archives">
     <% } %>

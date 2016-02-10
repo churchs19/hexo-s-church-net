@@ -68,7 +68,9 @@ theme: shane
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:churchs19/churchs19.github.io.git
+  branch: master
   
 feed:
   type: atom
