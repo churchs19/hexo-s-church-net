@@ -163,8 +163,8 @@ jQuery(function ($) {
     $(document).ready(function () {
         if ($('.photos-section').length > 0) {
             var $grid = $('.photos-section ul.grid');
-            var imageTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt="<%- caption.text %>"><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image" title="<%- caption.text %>" data-link="<%- link %>" data-fancybox-group="gallery"><i class="fa fa-picture-o"></i><p><%- caption.text %></p></a></div></figcaption></figure></li>');
-            var videoTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt="<%- caption.text %>"><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image fancybox.html" title="<%- caption.text %>" data-link="<%- link %>" data-poster="<%- images.standard_resolution.url %>" data-width="<%- videos.standard_resolution.width %>" data-height="<%- videos.standard_resolution.height %>" data-fancybox-group="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p></a></div></figcaption></figure></li>');
+            var imageTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox-group="gallery"><i class="fa fa-picture-o"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption></figure></li>');
+            var videoTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image fancybox.html" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-poster="<%- images.standard_resolution.url %>" data-width="<%- videos.standard_resolution.width %>" data-height="<%- videos.standard_resolution.height %>" data-fancybox-group="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption></figure></li>');
             $.ajax({
                 url: 'https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432',
                 crossDomain: true,
@@ -172,6 +172,7 @@ jQuery(function ($) {
                 cache: false,
                 success: function (response) {
                     for (var i = 0; i < Math.min(10, response.data.length); i++) {
+                        response.data[i]['created_time_formatted'] = moment.unix(response.data[i].created_time).format('lll');
                         if (response.data[i].type === 'video') {
                             $grid.append(videoTemplate(response.data[i]));
                         } else {
@@ -183,7 +184,7 @@ jQuery(function ($) {
                         .fancybox({
                             padding: 4,
                             beforeShow: function () {
-                                this.title = '<a href="' + $(this.element).attr('data-link') + '" target="_blank">' + $(this.element).attr('title') + '</a>';
+                                this.title = '<a href="' + $(this.element).attr('data-link') + '" target="_blank">' + $(this.element).attr('data-title') + '</a>';
                             },
                             beforeLoad: function () {
                                 if($(this.element).hasClass('fancybox.html')) {
@@ -217,19 +218,9 @@ jQuery(function ($) {
             .fancybox({
                 padding: 4,
                 beforeShow: function () {
-//                    this.title = '<a href="' + $(this.element).attr('data-link') + '" target="_blank">' + $(this.element).attr('title') + '</a>';
                 },
                 beforeLoad: function () {
-//                    if($(this.element).hasClass('fancybox.html')) {
-//                        // build the HTML5 video structure for fancyBox content with specific parameters
-//                        // set fancyBox content and pass parameters
-//                        this.content = '<video src="' + this.href + '"  poster="' + $(this.element).attr('data-poster') + '" width="' + $(this.element).attr('data-width') + '" height="' + $(this.element).attr('data-height') + '"  controls="controls" preload="none" ></video>';
-//                        // set fancyBox dimensions
-//                        this.width = $(this.element).attr('data-width');
-//                        this.height = $(this.element).attr('data-height');
-//                    }
                 }
-
             });
 
     });

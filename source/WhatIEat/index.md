@@ -25,5 +25,6 @@ Want to keep track of what you eat but don't want all of the calorie databases a
 * Full Windows Phone 8 Support
 * Machine translated for broad localization!
 
+Completely free!
 
-What I Eat is available in the [Windows Store](http://www.windowsphone.com/s?appid=225b965d-d41f-440b-9e56-f03a550052e8) as a free download.
+[![Download on Windows Phone](/images/WindowsPhone_208x67_blu.png)](http://www.windowsphone.com/s?appid=225b965d-d41f-440b-9e56-f03a550052e8)

@@ -858,7 +858,7 @@ Resume Timeline
         float: left;
         width: 43%;
         text-align: right;
-        border: 1px solid #eee;
+        border: 1px solid #212040;
         position: relative;
     }
     .timeline-content,
@@ -874,7 +874,7 @@ Resume Timeline
         background-color: #fff;
     }
     .timeline-content::after {
-        border: 1px solid #eee;
+        border: 1px solid #212040;
         width: 100%;
         position: absolute;
         content: "";
@@ -900,7 +900,7 @@ Resume Timeline
     }
     .timeline>li .timeline-panel::before {
         left: 100%;
-        border-left: 12px solid #ECECEC;
+        border-left: 12px solid #212040;
         -webkit-transition: all 400ms;
         -moz-transition: all 400ms;
         -o-transition: all 400ms;
@@ -911,7 +911,7 @@ Resume Timeline
     }
     .timeline>li.timeline-inverted .timeline-panel::before {
         right: 100%;
-        border-right: 12px solid #ECECEC;
+        border-right: 12px solid #212040;
         -webkit-transition: all 400ms;
         -moz-transition: all 400ms;
         -o-transition: all 400ms;
@@ -1416,6 +1416,9 @@ Icon for all respective meta
 }
 .copyright p {
     margin: 0;
+}
+.copyright img {
+    margin-right: 10px;
 }
 
 /* ---------------------------------------------- /*
