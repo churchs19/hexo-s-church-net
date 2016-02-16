@@ -13,4 +13,5 @@ alias:
 - WindowsSoftware.aspx
 - WindowsMobileSoftware.aspx
 - SmartphoneSoftware.aspx
+- BasecampPeopleSync/
 ---
