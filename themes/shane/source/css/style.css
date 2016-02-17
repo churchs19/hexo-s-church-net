@@ -1256,13 +1256,13 @@ Resume Timeline
     padding: 0 12px;
 }
 .post-meta {}
-.post-meta li.article-tag-list-item {
+li.article-tag-list-item {
     display: inline;
 }
-.post-meta li.article-tag-list-item:after {
+li.article-tag-list-item:after {
     content: ", "
 }
-.post-meta li.article-tag-list-item:last-child:after {
+li.article-tag-list-item:last-child:after {
     content: " ";
 }
 .the-category a {
@@ -1343,6 +1343,10 @@ Icon for all respective meta
 .the-share div,
 .the-comments div {
     display: inline;
+}
+.article-nav-link-wrap i.fa {
+    padding-top: 7px;
+    padding-right: 5px;
 }
 
 /* === Hire Section === */
@@ -1589,7 +1593,8 @@ Icon for all respective meta
 }
 
 /* Sidebar */
-.sidebar-module .biography {
+.sidebar-module .biography,
+.sidebar-module .biography-text {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
