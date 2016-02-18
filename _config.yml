@@ -5,7 +5,7 @@
 # Site
 title: Shane Church
 subtitle: Software Developer
-description: Development Supervisor at Two Rivers Marketing, Software Developer, Dad, Colorado Rockies and CU Buffs fan, and Lego enthusiast
+description: Software Developer, Dad, Colorado Rockies and CU Buffs fan, and Lego enthusiast
 author: Shane Church
 language:
 timezone:
@@ -23,7 +23,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: blog
 category_dir: categories
-code_dir: downloads/code
+code_dir: software/code
 i18n_dir: :lang
 skip_render:
 
