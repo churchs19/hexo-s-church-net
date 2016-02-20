@@ -75,7 +75,7 @@ deploy:
 feed:
   type: atom
   path: atom.xml
-  limit: 20
+  limit: 5
   hub:
 
 archive_generator:
@@ -88,3 +88,5 @@ sitemap:
   path: sitemap.xml
   
 disqus_shortname: s-church
+
+hire: false

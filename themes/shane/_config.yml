@@ -9,9 +9,8 @@ fancybox: true
 # Sidebar
 widgets:
 - about
-- category
-- tagcloud
 - archive
+- tagcloud
 
 # widget behavior
 archive_type: 'monthly'

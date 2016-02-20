@@ -1,18 +1,23 @@
-    <!-- Blog Section -->
-    <section id="blog" class="latest-blog-section section-padding">
-      <div class="container">
+<!-- Blog Section -->
+<section id="blog" class="latest-blog-section section-padding">
+    <div class="container">
         <h2 class="section-title wow fadeInUp">Latest Posts</h2>
 
-        <div class="flex-container">
-            <% if (site.posts.length){ %>              
-                  <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
-                    <%- partial('_partial/archive-post', {post: post, index: true}) %>
-                  <% }) %>
+        <!--        <div class="flex-container">-->
+        <div class="row">
+            <% if (site.posts.length){ %>
+                <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
+                    <div class="col-md-4">
+                        <%- partial('_partial/archive-post', {post: post, index: true}) %>
+                    </div>
+                <% }) %>
             <% } %>
-        </div><!-- /.row -->
-        <div class="blog-more text-center">
-          <a href="/<%- config.archive_dir %>/" class="btn btn-primary">View More</a>
         </div>
-        
-      </div><!-- /.container -->
-    </section><!-- End Blog Section -->
+        <div class="blog-more text-center">
+            <a href="/<%- config.archive_dir %>/" class="btn btn-primary">View More</a>
+        </div>
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- End Blog Section -->

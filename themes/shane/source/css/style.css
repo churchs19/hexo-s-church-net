@@ -799,6 +799,12 @@ SOCIAL ICON
 .photos-links a i {
     margin-right: 10px;
 }
+
+.photos-links .btn{
+    margin-bottom: 10px;
+}
+
+
 /* === Resume Section === */
 
 
@@ -1240,6 +1246,7 @@ Resume Timeline
 
 .projects-section h3 {
     font-size: 40px;
+    line-height: 43px;
     padding-top: 7px;
     margin-bottom: 15px;
     color: #B1B0DA;
@@ -1257,17 +1264,17 @@ Resume Timeline
 .projects-gallery .gallery-cell {
     width: 100%;
     /* full width */
-    height: 600px;
+    height: 645px;
     /* height of gallery */
     margin-right: 10px;
     background: #49488e;
 }
 
+.projects-device-column,
 .projects-gallery-column {
     padding-top: 60px;
     color: #fff;
     position: relative;
-    padding-left: 400px;
 }
 
 .projects-gallery-column ul {
@@ -1352,22 +1359,36 @@ Resume Timeline
 
 .latest-blog-section .flex-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
 
 .blog-post-wrapper {
     padding: 4px;
     border: 1px solid #eee;
     border-bottom: 3px double #eee;
-    margin-right: 20px;
-    width: calc(33% - 13.34px);
+    /*    margin-right: 20px;*/
+    /*    width: calc(33% - 13.34px);*/
     /* Width - (total space between columns per row / number of columns per row) */
-    padding-bottom: 42px;
+    padding-bottom: 48px;
     position: relative;
 }
 
+
+/*
 .blog-post-wrapper:nth-of-type(3n) {
     margin-right: 0;
+}
+*/
+
+.blog-post-wrapper h3 {
+    height: 80px;
+    overflow: hidden;
+}
+
+.blog-post-wrapper p {
+    height: 84px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .figure {
@@ -1455,6 +1476,10 @@ li.article-tag-list-item:after {
 
 li.article-tag-list-item:last-child:after {
     content: " ";
+}
+
+.article-tag-list-item .article-tag-list-link {
+    padding-right: 0;
 }
 
 .the-category a {
@@ -1566,6 +1591,7 @@ Icon for all respective meta
     padding-right: 5px;
 }
 
+
 /* === Hire Section === */
 
 .hire-section {
@@ -1625,7 +1651,12 @@ Icon for all respective meta
     padding-top: 7px;
 }
 
-.contact-section address,
+.contact-section i.fa {
+    width: 45px;
+    text-align: center;
+}
+
+.contact-sectionaddress,
 .contact-section .contact-info {
     overflow: hidden;
     line-height: 30px;
@@ -1633,10 +1664,6 @@ Icon for all respective meta
     margin-bottom: 45px
 }
 
-.contact-item {
-    display: inline-block;
-    text-align: left;
-}
 
 /* === Footer Wrapper === */
 

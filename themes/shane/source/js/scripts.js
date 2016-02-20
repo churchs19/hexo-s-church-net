@@ -230,6 +230,9 @@ jQuery(function ($) {
     // -------------------------------------------------------------
     $(document).ready(function () {
         $('img.scale').imageScale();
+        $(window).resize(function () {
+            $('img.scale').imageScale();
+        });
     });
 
     // -------------------------------------------------------------

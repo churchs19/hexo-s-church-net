@@ -6,6 +6,9 @@
 <%- partial('_partial/projects') %>
 <%- partial('_partial/resume') %>
 <%- partial('_partial/home-photos') %>
+<% if (config.hire) { %>
+<%- partial('_partial/hire') %>
+<% } %>
 <%- partial('_partial/contact') %>
 <script id="dsq-count-scr" src="//<%= config.disqus_shortname %>.disqus.com/count.js" async></script>
 

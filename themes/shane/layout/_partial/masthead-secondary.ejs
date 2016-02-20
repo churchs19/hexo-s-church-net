@@ -30,6 +30,9 @@
                     </li>
                     <li><a href="<%- config.root %>#resume">Resume</a></li>
                     <li><a href="<%- config.root %>#photos">Photos</a></li>
+                    <% if (config.hire) { %>
+                    <li><a href="<%- config.root %>#hire-me">Hire Me</a></li>
+                    <% } %>
                     <li><a href="<%- config.root %>#contact">Contact</a></li>
                     <% if (theme.rss){ %>
                     <li><a href="<%- theme.rss %>" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
