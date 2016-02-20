@@ -1656,7 +1656,7 @@ Icon for all respective meta
     text-align: center;
 }
 
-.contact-sectionaddress,
+.contact-section address,
 .contact-section .contact-info {
     overflow: hidden;
     line-height: 30px;
@@ -1669,7 +1669,7 @@ Icon for all respective meta
 
 .footer-wrapper {
     background: #49488e;
-    padding: 36px 0;
+    padding: 16px 0;
     color: #fff;
 }
 

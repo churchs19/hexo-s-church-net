@@ -263,12 +263,26 @@
         margin-bottom: 0;
     }
     /*projects*/
+    .flickity-viewport {
+        height: auto;
+        overflow: visible;
+    }
+    .projects-gallery .gallery-cell {
+        height: auto;
+    }
+    .projects-gallery-column {
+        padding-bottom: 30px;
+    }
     .device {
+        position: static;
         height: 542px;
         width: 298px;
         background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
     }
     .device-content {
+        position: relative;
         width: 242px;
         height: 404px;
         top: 48px;
@@ -277,6 +291,9 @@
     .device-content img {
         width: 242px;
         height: 404px;
+    }
+    .project-spacer {
+        height: 93px;
     }
 }
 
@@ -364,12 +381,26 @@
         margin-bottom: 0;
     }
     /*projects*/
+    .flickity-viewport {
+        height: auto;
+        overflow: visible;
+    }
+    .projects-gallery .gallery-cell {
+        height: auto;
+    }
+    .projects-gallery-column {
+        padding-bottom: 30px;
+    }
     .device {
+        position: static;
         height: 542px;
         width: 298px;
         background-size: cover;
+        margin-left: auto;
+        margin-right: auto;
     }
     .device-content {
+        position: relative;
         width: 242px;
         height: 404px;
         top: 48px;
@@ -378,6 +409,9 @@
     .device-content img {
         width: 242px;
         height: 404px;
+    }
+    .project-spacer {
+        height: 93px;
     }
 }
 
