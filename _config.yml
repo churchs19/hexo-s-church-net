@@ -8,7 +8,7 @@ subtitle: Software Developer
 description: Software Developer, Dad, Colorado Rockies and CU Buffs fan, and Lego enthusiast
 author: Shane Church
 language:
-timezone:
+timezone: America/Chicago
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -32,7 +32,7 @@ new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: true # Transform title into titlecase
 external_link: true # Open external links in new tab
-filename_case: 0
+filename_case: 1
 render_drafts: false
 post_asset_folder: false
 relative_link: false
@@ -87,6 +87,6 @@ archive_generator:
 sitemap:
   path: sitemap.xml
   
-disqus_shortname: s-church-test
+disqus_shortname: s-church
 
 hire: false
