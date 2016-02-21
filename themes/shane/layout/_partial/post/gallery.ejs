@@ -3,7 +3,7 @@
   <% post.photos.forEach(function(photo, i){ %>
     <div class="col-xs-6 col-md-4">
       <a class="thumbnail image-link" href="<%- url_for(photo.split('|')[0]) %>" rel="gallery_<%= post._id %>" title="<%- photo.split('|')[1] %>">
-        <img src="<%- url_for(photo.split('|')[0]) %>" itemprop="image" alt="<%- photo.split('|')[1] %>" />
+        <img data-original="<%- url_for(photo.split('|')[0]) %>" src="/images/pixel.png" class="lazy" itemprop="image" alt="<%- photo.split('|')[1] %>" />
       </a>
     </div>
   <% }) %>

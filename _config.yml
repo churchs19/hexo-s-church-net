@@ -87,6 +87,6 @@ archive_generator:
 sitemap:
   path: sitemap.xml
   
-disqus_shortname: s-church
+disqus_shortname: s-church-test
 
 hire: false
