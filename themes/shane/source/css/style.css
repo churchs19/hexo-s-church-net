@@ -1102,6 +1102,9 @@ Resume Timeline
     }
 }
 
+#resume .download-button {
+    margin-top: 40px;
+}
 
 /* === Skill Section === */
 
