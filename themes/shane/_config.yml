@@ -17,7 +17,7 @@ archive_type: 'monthly'
 show_count: true
 
 # Miscellaneous
-google_analytics:
+google_analytics: 'UA-74778051-1'
 favicon: /favicon.ico
 twitter_id: 'shaneschurch'
 google_plus:
