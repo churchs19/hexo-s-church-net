@@ -3,6 +3,8 @@
         <div class="post-thumbnail">        
             <% if(post.photos && post.photos.length >= 1) { %>
             <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.photos[0].split('|')[0]) %>" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
+            <% } else { %>
+            <a href="<%- url_for(post.path) %>"><img src="/images/blog/default-post.jpg" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
             <% } %>
         </div>
         <span><img src="/images/SCLogo-Transparent.svg" alt=""/></span>

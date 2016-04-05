@@ -4,8 +4,6 @@ alias: blog/488/
 tags:
 - Development
 - SXSW
-photos:
-- http://sxsw.com/sites/default/files/PanelPicker_Vote_14-blog.jpg|Vote My Session
 ---
 Voting opens today for presentations for South by Southwest Interactive 2014\. I’ve submitted a proposal entitled “Surviving as a Developer in a BYOD World” and I would love your support for presenting at SXSW Interactive in 2014! Vote here: [http://panelpicker.sxsw.com/vote/25088](http://panelpicker.sxsw.com/vote/25088)! The full presentation abstract is below:
 
