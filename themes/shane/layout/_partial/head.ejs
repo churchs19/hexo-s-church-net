@@ -28,8 +28,9 @@
     <% } %>
     <% if (config.highlight.enable){ %>
       <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <% } %>
-
+    <% } %>		
+		<%- autoCanonical(config, page) %>
+		
     <!-- Bootstrap core CSS -->
     <%- css('bootstrap/css/bootstrap.min') %>
     <!-- Font Awesome CSS -->
