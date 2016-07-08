@@ -4,6 +4,7 @@ date: 2015-09-25 10:59:55
 tags:
 - Iowa
 - Home
+featured_image: We_re_officially__homeowners___FirstHouse__Pl.jpg
 photos:
 - /journal_images/We_re_officially__homeowners___FirstHouse__Pl.jpg|Homeowners
 ---

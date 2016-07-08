@@ -1,5 +1,18 @@
 <%- partial('_partial/preloader') %>
 <%- partial('_partial/masthead-secondary') %>
+<% if (page.featured_image){ %>
+<div class="intro-container tt-fullHeight tt-fullHeight-feature" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2" style="background-image: url(<%- page.featured_image %>);">
+    <div class="intro-mask"></div>
+    <div class="intro">
+        <header class="article-header">
+            <%- partial('_partial/post/title', {post: page, index: false, class_name: 'article-title'}) %>
+        </header>
+    </div>
+  <div class="mouse-icon">
+    <div class="wheel"></div>
+  </div>    
+</div>
+<% } %>
 <div class="container page-container">
     <div class="row">
         <div class="col-sm-12">        

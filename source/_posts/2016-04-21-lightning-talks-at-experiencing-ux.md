@@ -5,6 +5,7 @@ tags:
 - UX
 - What I Eat
 - Simplicity
+featured_image: 2016-04-21-lightning-talks-at-experiencing-ux/600_449144745.jpeg
 photos:
 - /journal_images/2016-04-21-lightning-talks-at-experiencing-ux/600_449144745.jpeg|Presenting at Experiencing UX
 - /journal_images/2016-04-21-lightning-talks-at-experiencing-ux/600_449144757.jpeg|The audience at Experiencing UX

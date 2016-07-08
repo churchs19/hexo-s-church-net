@@ -386,14 +386,19 @@ ul.list-check li::before {
     }
 }
 
-#home {
-    background: url(../images/home2.jpg) no-repeat center center;
+.intro-container {
+    background-repeat: no-repeat;
+    background-position: center center;
     -webkit-background-attachment: fixed;
     background-attachment: fixed;
     background-color: #212040;
     background-size: cover;
     padding: 0;
     position: relative;
+}
+
+#home {
+    background-image: url(../images/home2.jpg);
 }
 
 .intro {
@@ -432,6 +437,15 @@ ul.list-check li::before {
     color: #B1B0DA;
 }
 
+.intro-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #2a2a2f;
+    opacity: 0.4;
+}
 
 /* 
 SOCIAL ICON 
@@ -789,7 +803,7 @@ SOCIAL ICON
     margin-right: 10px;
 }
 
-.photos-links .btn{
+.photos-links .btn {
     margin-bottom: 10px;
 }
 
@@ -1094,6 +1108,7 @@ Resume Timeline
 #resume .download-button {
     margin-top: 40px;
 }
+
 
 /* === Skill Section === */
 
@@ -2030,3 +2045,36 @@ Icon for all respective meta
     background: #dd4b39;
     text-shadow: 0 1px #be3221;
 }
+
+
+/* End Article Share Links */
+
+
+/* Post Hero Images */
+
+.wide {
+    position: relative;
+    width: 100%;
+    /*
+  height:100%;
+  height:calc(100% - 1px);
+  background-image:url('https://c.stocksy.com/a/RcN300/z0/805779.jpg');
+  background-size:cover;
+*/
+}
+
+.wide img {
+    width: 100%;
+}
+
+.wide .wide-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.wide-container h1 {
+    color: #fff;
+}
+
+/* End Post Hero Images */

@@ -5,7 +5,8 @@ tags:
 - CU Buffs
 - March Madness
 - Des Moines
-photos:
+featured_image: 2016-03-20-dancing-in-des-moines/WP_20160316_12_13_35_Rich_LI.jpg
+photos: 
 - /journal_images/2016-03-20-dancing-in-des-moines/WP_20160316_12_13_35_Rich_LI.jpg|Ethan outside Wells Fargo Arena
 - /journal_images/2016-03-20-dancing-in-des-moines/WP_20160316_12_42_44_Pro.jpg|Sitting with Kami Carmann after our interview
 - /journal_images/2016-03-20-dancing-in-des-moines/WP_20160317_10_06_12_Pro.jpg|With the CU cheerleaders at the Buffs Bash

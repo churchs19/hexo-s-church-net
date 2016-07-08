@@ -3,6 +3,7 @@ date: 2015/4/11 10:40:00
 alias: blog/30493/
 tags:
 - Colin
+- Rockies
 photos:
 - /journal_images/Windows-Live-Writer/Colins-First-Rockies-Game_7A04/WP_20150410_15_03_49_Pro_3.jpg|Daddy and his boys on Opening Day
 ---

@@ -33,7 +33,7 @@ jQuery(function ($) {
     // -------------------------------------------------------------
 
     (function () {
-        $('a[href*=#]').bind("click", function (e) {
+        $('a[href*=#]').bind('click', function (e) {
             var anchor = $(this);
             $('html, body').stop().animate({
                 scrollTop: $(anchor.attr('href')).offset().top
@@ -46,13 +46,21 @@ jQuery(function ($) {
 
     // -------------------------------------------------------------
     // Full Screen Slider
-    // -------------------------------------------------------------
+    // -------------------------------------------------------------    
     (function () {
-        $(".tt-fullHeight").height($(window).height());
+        var resizeContainer = function () {
+            $('.tt-fullHeight').each(function () {
+               if($(this).hasClass('tt-fullHeight-feature')) {
+                   $(this).height($(window).height() - $('header.header').height());
+               } else {
+                   $(this).height($(window).height());
+               }
+            });
+        };
+        
+        resizeContainer();
 
-        $(window).resize(function () {
-            $(".tt-fullHeight").height($(window).height());
-        });
+        $(window).resize(resizeContainer);
 
     }());
 

@@ -4,6 +4,7 @@ date: 2015-07-10 15:02:03
 tags:
 - Moving
 - Iowa
+featured_image: IMG_2311.jpg
 photos:
 - /journal_images/IMG_2311.jpg|Ethan sitting in the moving truck
 ---
