@@ -188,7 +188,7 @@ jQuery(function ($) {
                 imageTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox-group="gallery"><i class="fa fa-picture-o"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption></figure></li>'),
                 videoTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image fancybox.html" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-poster="<%- images.standard_resolution.url %>" data-width="<%- videos.standard_resolution.width %>" data-height="<%- videos.standard_resolution.height %>" data-fancybox-group="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption></figure></li>');
             $.ajax({
-                url: 'https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432',
+                url: 'https://api.instagram.com/v1/users/1511680150/media/recent?access_token=1511680150.b6f5ef5.3e2b199940114508b2c577bc906d4697',
                 crossDomain: true,
                 dataType: 'jsonp',
                 cache: false,
