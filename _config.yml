@@ -91,3 +91,18 @@ sitemap:
 disqus_shortname: s-church
 
 hire: false
+
+generator_amp:
+  templateDir:  themes/shane-amp
+  assetDistDir: amp-dist
+  cssFilePath: amp.css
+  templateFilePath: amp.ejs
+  logo:
+    path:   SCLogo-purple@2x.png
+    width:  62
+    height: 85
+  substituteTitleImage: 
+    path:   default-post.jpg
+    width:  512
+    height: 512
+  warningLog: true   # If you want to validate, please set true.
