@@ -98,11 +98,12 @@ generator_amp:
   cssFilePath: amp.css
   templateFilePath: amp.ejs
   logo:
-    path:   SCLogo-purple@2x.png
-    width:  62
+    path:   SCLogo-purple@640w.png
+    width:  640
     height: 85
   substituteTitleImage: 
     path:   default-post.jpg
     width:  512
     height: 512
-  warningLog: true   # If you want to validate, please set true.
+  warningLog: false   # If you want to validate, please set true.
+  google_analytics: UA-74778051-1

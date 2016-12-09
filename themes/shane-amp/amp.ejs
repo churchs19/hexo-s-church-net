@@ -116,64 +116,64 @@
 		</header>
 	  	
 	  	
-	  	<div id="main">
-	  	
-		    <article id="<%= post.layout %>-<%= post.slug %>" class="post">
-		    	
-		    	<!-- datePublished -->
-				<footer class="entry-meta-header">
-					<span class="meta-elements date">
-						<time datetime="<%= datePublished %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
-					</span>
-				</footer>
-				
-				<!-- entry title -->
-				<header class="entry-header">
+		<div id="main">	  	
+			<article id="<%= post.layout %>-<%= post.slug %>" class="post">
+				<header class="article-header">
 					<% if (post.link){ %>
-					  <h1 itemprop="name" class="entry-title">
-					    <a class="article-title" href="<%- post.link %>" target="_blank" itemprop="url"><%= post.title %></a>
-					  </h1>
+						<h1 itemprop="name" class="entry-title">
+							<a class="article-title" href="<%- post.link %>" target="_blank" itemprop="url"><%= post.title %></a>
+						</h1>
 					<% } else if (post.title){ %>
-					  <h1 class="article-title entry-title" itemprop="name">
-					    <%= post.title %>
-					  </h1>
+						<h1 class="article-title entry-title" itemprop="name">
+							<%= post.title %>
+						</h1>
 					<% } %>
 				</header>
-				
+
+				<div class="article-meta">
+					<div class="article-datetime">
+						<time datetime="<%= datePublished %>" itemprop="datePublished"><%= datePublished %></time>
+					</div>
+					<% if (post.author){ %>
+						<div class="article-author">
+							<%= post.author %>
+						</div>
+					<% } %>                            
+				</div>
+
 				<!-- entry content -->
-			    <div class="entry-content ecp">
-			  		<%- content %>
-			  	</div>
-				
-		  	</article>
+				<div class="entry-content ecp">
+					<%- content %>
+				</div>
+			</article>
 		  	
-		  	<hr class="article-divider">
+		  <hr class="article-divider"/>
 		  	
-		  	<div class="homeLink">
-		  		<a href="/"><strong class="article-nav-caption">HOME</strong></a>
-		  	</div>
+			<div class="homeLink">
+				<a href="/">HOME</a>
+			</div>
 		  	
-		  	<!-- article nav -->
-		  	<% if (post.prev || post.next){ %>
+			<!-- article nav -->
+			<% if (post.prev || post.next){ %>
 			<nav id="article-nav">
-			  <% if (post.prev){ %>
-			    <a href="<%- config.root %><%- post.prev.path %>" id="article-nav-newer" class="article-nav-link-wrap">
-			      <strong class="article-nav-caption">Newer</strong>
+			  <% if (post.next){ %>
+			    <a href="<%- config.root %><%- post.next.path %>amp/index.html" id="article-nav-older" class="article-nav-link-wrap">
+			      <strong class="article-nav-caption">Older</strong>
 			      <div class="article-nav-title">
-			        <% if (post.prev.title){ %>
-			          <%= post.prev.title %>
+			        <% if (post.next.title){ %>
+			          <%= post.next.title %>
 			        <% } else { %>
 			          (no title)
 			        <% } %>
 			      </div>
 			    </a>
 			  <% } %>
-			  <% if (post.next){ %>
-			    <a href="<%- config.root %><%- post.next.path %>" id="article-nav-older" class="article-nav-link-wrap">
-			      <strong class="article-nav-caption">Older</strong>
+			  <% if (post.prev){ %>
+			    <a href="<%- config.root %><%- post.prev.path %>amp/index.html" id="article-nav-newer" class="article-nav-link-wrap">
+			      <strong class="article-nav-caption">Newer</strong>
 			      <div class="article-nav-title">
-			        <% if (post.next.title){ %>
-			          <%= post.next.title %>
+			        <% if (post.prev.title){ %>
+			          <%= post.prev.title %>
 			        <% } else { %>
 			          (no title)
 			        <% } %>
@@ -186,49 +186,9 @@
 		</div>
 		
 		<footer id="footer">
-		
-			<div class="site-author-info">
-		
-				<% if (config.authorDetail && config.authorDetail.avatar && config.authorDetail.avatar.path && config.authorDetail.avatar.width && config.authorDetail.avatar.height ){ %>
-				<div class="gravatar-wrapper">
-					<div class="gravatar-area">
-						<amp-img alt="gravatar" class="circle responsive-img" src="<%= avatorPath %>" width="<%= config.authorDetail.avatar.width %>" height="<%= config.authorDetail.avatar.height %>"></amp-img>
-					</div>
-				</div>
-				<% } %>
-				
-				<div>
-					<h6 class="authorCap"><%= config.author %>&nbsp;
-						<% if (config.authorDetail && config.authorDetail.authorReading){ %>
-						<span class="authorReading">(<%= config.authorDetail.authorReading %>)</span>
-						<% } %>
-					</h6>
-					<% if (config.authorDetail && config.authorDetail.description){ %>
-					<p class="site-author-desc">
-						<%= config.authorDetail.description %>
-					</p>
-					<% } %>
-				</div>
-				
-			</div>
-			
-			
-			<div class="copyright-tool">
-				<div class="copyright-title">
-					<span>
+				<div class="copyright">
 					&copy; <%= copyrightDate %>&nbsp;<%= config.author || config.title %>
-					</span>
 				</div>
-				<% if (config.copyright_notice){ %>
-				<div class="copyright-notice">
-					<p>
-						<%= config.copyright_notice %>
-					</p>
-				</div>
-				<% } %>
-			</div>
-			
-			
 		</footer>
 	</div>
   	
