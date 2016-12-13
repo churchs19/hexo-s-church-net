@@ -15,6 +15,9 @@ photos:
 - /journal_images/2016-03-20-dancing-in-des-moines/WP_20160317_12_01_47_Pro_LI.jpg|Colin's enthralled by the game
 - /journal_images/2016-03-20-dancing-in-des-moines/WP_20160317_13_36_36_Pro_LI.jpg|Ethan goes all out for the Buffs!
 - /journal_images/2016-03-20-dancing-in-des-moines/ShaneAndEthan-DSMRegisterSketchbook-20160320.jpg|Ethan and I in the Sunday Register Sketchbook
+ampSettings: 
+ titleImage:
+   path: ../journal_images/2016-03-20-dancing-in-des-moines/WP_20160316_12_13_35_Rich_LI.jpg
 ---
 This week, we were lucky that the Buffs got assigned to the NCAA Tournament site here in Des Moines! Given that I was still looking for a job, we didn't think there was any way we'd be able to go to the games, so Ethan and I took the opportunity to go to the open practice on Wednesday at Wells Fargo Arena to check out the Buffs. While we were there, we lucked out and ran into my old friend from CU, former women's basketball player, Kami Carmann. Kami's working for CW 2 and Fox 31 in Denver as a sports reporter now and she was hunting for Buffs fans to interview, so she [interviewed us](http://kdvr.com/2016/03/16/colorado-ready-to-take-on-uconn-as-ncaa-tournament-starts-thursday/)! A little later, we were approached by a Des Moines Register reporter who wanted to take our picture for the Sunday Sketchbook they do. Sure enough, [we were in the Sunday Register as well](http://data.desmoinesregister.com/marturello/)!
 

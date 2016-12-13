@@ -9,6 +9,9 @@ featured_image: 2016-04-21-lightning-talks-at-experiencing-ux/600_449144745.jpeg
 photos:
 - /journal_images/2016-04-21-lightning-talks-at-experiencing-ux/600_449144745.jpeg|Presenting at Experiencing UX
 - /journal_images/2016-04-21-lightning-talks-at-experiencing-ux/600_449144757.jpeg|The audience at Experiencing UX
+ampSettings: 
+ titleImage:
+   path: ../journal_images/2016-04-21-lightning-talks-at-experiencing-ux/600_449144745.jpeg
 ---
 Last night I had the pleasure of presenting a lightning talk at the [Experiencing UX - Central Iowa meetup](http://www.meetup.com/experiencing-UX-DSM/). There were 4 presenters including myself. Lucas Freed ([@lucasfreed](https://twitter.com/lucasfreed)) presented on the Simplicity Project at Wells Fargo, Amanda Morrow ([@amandamorrow](https://twitter.com/amandamorrow)) shared her project of preserving and indexing her grandma's notes in A World of Hurt, Matt Nowatzke ([@mattnowatzke](https://twitter.com/mattnowatzke)) presented on the 5 Second Test, and I presented on The Power of Leaving Things Out.
 

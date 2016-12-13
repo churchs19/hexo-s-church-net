@@ -273,3 +273,8 @@ a:hover {
     text-align: center;
     font-size: 0.7em;
 }
+
+hr.article-divider {
+    width: 30%;
+    margin: 20px auto;
+}
