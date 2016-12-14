@@ -12,4 +12,4 @@ I am truly overwhelmed by the response to [What I Eat](/WhatIEat/WindowsPhone)! 
 
 If you haven’t tried it, check it out!
 
-[![](images/WindowsPhone_208x67_blu.png)](http://www.windowsphone.com/s?appid=225b965d-d41f-440b-9e56-f03a550052e8 "What I Eat in the Windows Phone Store")
+[![](/images/WindowsPhone_208x67_blu.png)](http://www.windowsphone.com/s?appid=225b965d-d41f-440b-9e56-f03a550052e8 "What I Eat in the Windows Phone Store")

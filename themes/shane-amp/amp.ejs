@@ -43,10 +43,12 @@
 			},
 			"datePublished": "<%= post.date.toISOString() %>",
 			"dateModified": "<%= post.updated.toISOString() %>",
-			<% if (post.featured_image && post.featured_image != ""){ %>
+			<% if (post.eyeCatchImage && post.eyeCatchImage != "" && post.eyeCatchImageProperty && post.eyeCatchImageProperty.width && post.eyeCatchImageProperty.height){ %>
 			"image": {
 				"@type": "ImageObject",
-				"url": "<%= post.featured_image %>",
+				"url": "<%= post.titleImageForAmp %>",
+				"width" : <%= post.eyeCatchImageProperty.width %>,
+				"height" : <%= post.eyeCatchImageProperty.height %>
 			},
 			<% } %>
 			"author": {
@@ -141,6 +143,12 @@
 					<% } %>                            
 				</div>
 
+				<% if (post.eyeCatchImage && post.eyeCatchImage != "" && post.eyeCatchImageProperty && post.eyeCatchImageProperty.width && post.eyeCatchImageProperty.height && !post.isSubstituteEyeCatchImage){ %>
+				<div class="entry-image">
+					<amp-img src="<%= post.eyeCatchImage %>" width="<%= post.eyeCatchImageProperty.width %>" height="<%= post.eyeCatchImageProperty.height %>" layout="responsive">
+					</amp-img>
+				</div>
+				<% } %>
 				<!-- entry content -->
 				<div class="entry-content ecp">
 					<%- content %>
