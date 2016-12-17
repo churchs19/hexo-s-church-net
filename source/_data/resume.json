@@ -6,7 +6,10 @@
             "company": "Nationwide Insurance",
             "location": "Des Moines, IA",
             "title": "Creative Technologist",
-            "details": []
+            "details": [
+                "Worked as a contractor on the user experience (UX) team at Nationwide Insurance designing and developing high fidelity UI prototypes for multiple business units using technologies including HTML, CSS, JavaScript, Bootstrap, Node.js, Angular.js.",
+                "Served as the UX Lead on additional projects, managing project scope, timelines, and deliverables for the UX team in addition to being responsible for development related deliverables."
+                ]
       },
         {
             "start": "July 2015",
