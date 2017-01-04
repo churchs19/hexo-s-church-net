@@ -12,7 +12,7 @@ timezone: America/Chicago
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.s-church.net
+url: http://s-church.net
 #url: http://localhost:4000
 root: /
 permalink: blog/:year/:month/:day/:title/
@@ -99,9 +99,9 @@ generator_amp:
   cssFilePath: amp.css
   templateFilePath: amp.ejs
   logo:
-    path:   SCLogo-purple@640w.png
-    width:  640
-    height: 85
+    path:   SCLogo-purple_amp.png
+    width:  600
+    height: 60
   substituteTitleImage: 
     path:   default-post.jpg
     width:  512
