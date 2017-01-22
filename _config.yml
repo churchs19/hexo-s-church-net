@@ -93,7 +93,7 @@ sitemap:
   
 disqus_shortname: s-church
 
-hire: false
+hire: true
 
 generator_amp:
   templateDir:  themes/shane-amp
