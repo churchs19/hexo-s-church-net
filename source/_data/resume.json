@@ -1,6 +1,15 @@
 {
     "Experience": [
         {
+            "start": "February 2017",
+            "end": "Present",
+            "company": "Stine Seed",
+            "location": "Dallas Center, IA",
+            "title": "Senior Software Engineer",
+            "details": [
+                ]
+        },
+        {
             "start": "April 2016",
             "end": "Dec 2016",
             "company": "Nationwide Insurance",
