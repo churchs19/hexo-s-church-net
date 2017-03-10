@@ -414,6 +414,7 @@ ul.list-check li::before {
     transform: translate(0%, -50%);
     padding: 0 15px;
     color: #fff;
+    text-shadow: 1px 1px 2px #000;
 }
 
 .intro h1 {
@@ -453,6 +454,7 @@ SOCIAL ICON
 
 .social-icons {
     margin-top: 20px;
+    text-shadow: none;
 }
 
 .social-icons a i {
@@ -655,20 +657,7 @@ SOCIAL ICON
 }
 
 .biography {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: 1px solid #ededf2;
     position: relative;
-}
-
-.biography::after {
-    content: "";
-    border-bottom: 1px solid #ededf2;
-    position: absolute;
-    bottom: -3px;
-    width: 100%;
-    border-radius: 10px;
-    height: 20px;
 }
 
 .myphoto {
