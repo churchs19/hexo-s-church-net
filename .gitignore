@@ -6,4 +6,5 @@ node_modules/
 public/
 .deploy*/
 themes/bootstrap-blog
-.vscode
+.vscode/
+source/amp-dist/
