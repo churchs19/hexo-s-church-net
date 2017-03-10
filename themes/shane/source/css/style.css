@@ -338,6 +338,7 @@ ul.list-check li::before {
 .fancybox-title-float-wrap .child {
     border-radius: 0;
     text-shadow: none;
+    font-weight: normal;
 }
 
 .fancybox-nav {
