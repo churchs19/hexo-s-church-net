@@ -13,6 +13,8 @@ ampSettings:
 photos:
 - /journal_images/2017-04-06-reflections-on-dsmhack-2017/WP_20170303_20_00_06_Rich_LI.jpg|Working on the Refugee Alliance of Central Iowa site at dsmHack
 - /journal_images/2017-04-06-reflections-on-dsmhack-2017/E559ABE0-2B8E-4F75-92EB-0B838A099AD3.jpeg|Team RACI
+- /journal_images/2017-04-06-reflections-on-dsmhack-2017/WP_20170303_16_53_27_Rich_LI.jpg|Team RACI at work
+- /journal_images/2017-04-06-reflections-on-dsmhack-2017/HyChiFortune.jpg|Couldn't have gotten a better HyChi fortune for dsmHack!
 ---
 Last month I had the privilege of attending [dsmHack](http://dsmhack.org) for
 the first time. dsmHack is a charity hackathon providing assistance to central
