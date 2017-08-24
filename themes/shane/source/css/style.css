@@ -62,6 +62,15 @@ html {
     overflow-x: hidden;
 }
 
+::-moz-selection {
+    color: #fff;
+    background: #49488E;
+}
+
+::selection {
+    color: #fff;
+    background: #49488E;
+}
 
 /* Link style
 ---------------------------------------------------------*/
