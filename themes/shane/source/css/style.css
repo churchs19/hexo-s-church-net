@@ -977,7 +977,7 @@ Resume Timeline
 .timeline-body ul {
     list-style: disc;
     text-align: justify;
-    font-size: 70%;
+    font-size: 0.95em
 }
 
 @media(min-width:992px) {
