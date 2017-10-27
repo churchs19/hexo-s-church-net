@@ -1,13 +1,14 @@
 {
-    "Experience": [
-        {
+    "Experience": [{
             "start": "February 2017",
             "end": "Present",
             "company": "Stine Seed",
             "location": "Dallas Center, IA",
             "title": "Senior Software Engineer",
             "details": [
-                ]
+                "Worked as full-stack developer on a small team in support of the research operations at Stine Seed using technologies including HTML, CSS, JavaScript, Angular 4, D3.js, Webpack, Node.js, C#, ASP.NET, and SQL Server.",
+                "Served as the lead UX expert, designing and implementing UI in consultation with end users."
+            ]
         },
         {
             "start": "April 2016",
@@ -18,8 +19,8 @@
             "details": [
                 "Worked as a contractor on the user experience (UX) team at Nationwide Insurance designing and developing high fidelity UI prototypes for multiple business units using technologies including HTML, CSS, JavaScript, Bootstrap, Node.js, Angular.js.",
                 "Served as the UX Lead on additional projects, managing project scope, timelines, and deliverables for the UX team in addition to being responsible for development related deliverables."
-                ]
-      },
+            ]
+        },
         {
             "start": "July 2015",
             "end": "Feb 2016",
@@ -27,13 +28,13 @@
             "location": "Des Moines, IA",
             "title": "Development Supervisor",
             "details": [
-        "Managed team of 2 developers and a project manager providing technical guidance and mentoring.",
-        "Served as the primary technical point of contact for clients and internal account teams for all phases of development from sales through implementation.",
-        "Managed the technical communications and relationship with the agency’s development outsourcing partners.",
-        "Developed numerous engaging animations and applications for clients using HTML, CSS, JavaScript, SVG, ReactJS, and Node.js.",
-        "Established standardized development processes and workflows using Git, Node.js, and Grunt.js."
-      ]
-    },
+                "Managed team of 2 developers and a project manager providing technical guidance and mentoring.",
+                "Served as the primary technical point of contact for clients and internal account teams for all phases of development from sales through implementation.",
+                "Managed the technical communications and relationship with the agency’s development outsourcing partners.",
+                "Developed numerous engaging animations and applications for clients using HTML, CSS, JavaScript, SVG, ReactJS, and Node.js.",
+                "Established standardized development processes and workflows using Git, Node.js, and Grunt.js."
+            ]
+        },
         {
             "start": "Aug 2014",
             "end": "June 2015",
@@ -41,10 +42,10 @@
             "location": "Greenwood Village, CO",
             "title": "Senior Software Engineer",
             "details": [
-        "Developed browser extensions for Chrome, Firefox, IE, and Safari using HTML5, CSS, JavaScript, Backbone.js, Handlebars, RequireJS, Lodash, and jQuery.",
-        "Developed back end services to support the browser extensions in C#, ASP.NET MVC, and ASP.NET WebAPI."
-      ]
-    },
+                "Developed browser extensions for Chrome, Firefox, IE, and Safari using HTML5, CSS, JavaScript, Backbone.js, Handlebars, RequireJS, Lodash, and jQuery.",
+                "Developed back end services to support the browser extensions in C#, ASP.NET MVC, and ASP.NET WebAPI."
+            ]
+        },
         {
             "start": "Jan 2003",
             "end": "Present",
@@ -52,13 +53,13 @@
             "location": "Lakewood, CO/Pleasant Hill, IA",
             "title": "Owner/Developer",
             "details": [
-        "Designed and implemented a series of free and commercial Windows Phone applications using C# and XAML. All apps are localized into 38 languages supported in the Windows Phone Store and have more than 200,000 combined downloads.",
-        "http://www.windowsphone.com/en-US/store/publishers?publisherId=Shane%2BChurch",
-        "Two of the above apps, Stirling Birthday and What I Eat, are featured 2-4 times weekly in at least one worldwide market in the Windows Phone Store beginning in September 2013 through the present.",
-        "Weather Info 2005 for Windows Mobile named “Program of the Day” by Telefonica.net on January 12, 2006",
-        "Weather Info 2.4 for Pocket PC  named “Freeware of the Day” by PocketPCTools.com on August 11, 2004"
-      ]
-    },
+                "Designed and implemented a series of free and commercial Windows Phone applications using C# and XAML. All apps are localized into 38 languages supported in the Windows Phone Store and have more than 200,000 combined downloads.",
+                "http://www.windowsphone.com/en-US/store/publishers?publisherId=Shane%2BChurch",
+                "Two of the above apps, Stirling Birthday and What I Eat, are featured 2-4 times weekly in at least one worldwide market in the Windows Phone Store beginning in September 2013 through the present.",
+                "Weather Info 2005 for Windows Mobile named “Program of the Day” by Telefonica.net on January 12, 2006",
+                "Weather Info 2.4 for Pocket PC  named “Freeware of the Day” by PocketPCTools.com on August 11, 2004"
+            ]
+        },
         {
             "start": "Sep 2010",
             "end": "July 2014",
@@ -66,13 +67,13 @@
             "location": "Denver, CO",
             "title": "Technical Lead",
             "details": [
-        "Lead a team of 5 developers in building and architecting a system for National Oilwell Varco to visualize and edit oil well designs in 2D and 3D in HTML5 canvas using AngularJS, Twitter Bootstrap, KineticJS, ThreeJS, ng-grid, and Bing Maps, and Node.js. Also managed development resources in Ukraine and QA resources in India for this project.",
-        "Lead a team of 4 developers in building and architecting a system for the El Paso County (CO) Assessor’s Office to value oil and gas drilling operations for tax purposes using ASP.NET MVC 4, .NET 4.5, C#, jQuery, KnockoutJS, and Entity Framework 5.0.",
-        "Developed a mobile technology demonstration prototype running on Android, and iOS for Cartegraph using ASP.NET MVC 3, .NET 4.0, C#, jQuery, jQuery Mobile demonstrating the integration of mobile web with native device functionality. This prototype was the source of the MSDN Magazine article in March 2012.",
-        "Developed, architected, and assisted in the sales process on a number of projects involving HTML5, CSS3, AngularJS, jQuery, jQuery Mobile, Twitter Bootstrap, ASP.NET (MVC, WebAPI), C#, WCF, SQL Server, Node.js, and numerous other Web development tools.",
-        "Worked with and managed offshore resources in India, Ukraine, and Ethiopia on various projects."
-      ]
-    },
+                "Lead a team of 5 developers in building and architecting a system for National Oilwell Varco to visualize and edit oil well designs in 2D and 3D in HTML5 canvas using AngularJS, Twitter Bootstrap, KineticJS, ThreeJS, ng-grid, and Bing Maps, and Node.js. Also managed development resources in Ukraine and QA resources in India for this project.",
+                "Lead a team of 4 developers in building and architecting a system for the El Paso County (CO) Assessor’s Office to value oil and gas drilling operations for tax purposes using ASP.NET MVC 4, .NET 4.5, C#, jQuery, KnockoutJS, and Entity Framework 5.0.",
+                "Developed a mobile technology demonstration prototype running on Android, and iOS for Cartegraph using ASP.NET MVC 3, .NET 4.0, C#, jQuery, jQuery Mobile demonstrating the integration of mobile web with native device functionality. This prototype was the source of the MSDN Magazine article in March 2012.",
+                "Developed, architected, and assisted in the sales process on a number of projects involving HTML5, CSS3, AngularJS, jQuery, jQuery Mobile, Twitter Bootstrap, ASP.NET (MVC, WebAPI), C#, WCF, SQL Server, Node.js, and numerous other Web development tools.",
+                "Worked with and managed offshore resources in India, Ukraine, and Ethiopia on various projects."
+            ]
+        },
         {
             "start": "May 2008",
             "end": "July 2010",
@@ -80,10 +81,10 @@
             "location": "Lakewood, CO",
             "title": "Senior Software Engineer",
             "details": [
-        "Proposed, designed, and developed an online tool for Mine Rescue Teams, including a custom ASP.NET Google Maps server control, to allow emergency responders to get all of the relevant information about and directions to a mine emergency. The site uses the ASP.NET AJAX Toolkit, ASP.NET 3.5, Windows Communication Foundation, Google Maps, Google Local Search, and Oracle.",
-        "Developed and maintained .NET systems for the Mine Safety and Health Administration of the US Department of Labor, including the public facing EGov portal using Visual Studio 2008, ASP.NET 2.0 and 3.5, SOAP Web Services, C#, and Oracle."
-      ]
-    },
+                "Proposed, designed, and developed an online tool for Mine Rescue Teams, including a custom ASP.NET Google Maps server control, to allow emergency responders to get all of the relevant information about and directions to a mine emergency. The site uses the ASP.NET AJAX Toolkit, ASP.NET 3.5, Windows Communication Foundation, Google Maps, Google Local Search, and Oracle.",
+                "Developed and maintained .NET systems for the Mine Safety and Health Administration of the US Department of Labor, including the public facing EGov portal using Visual Studio 2008, ASP.NET 2.0 and 3.5, SOAP Web Services, C#, and Oracle."
+            ]
+        },
         {
             "start": "Sep 2006",
             "end": "May 2008",
@@ -91,10 +92,10 @@
             "location": "Greenwood Village, CO",
             "title": "Systems Architect",
             "details": [
-        "Developed the Prepaid Administration System user interface using C#, ASP.NET 2.0 and SOAP Web Services for the prepaid credit card group at Visa, Inc.",
-        "Diagnosed and corrected production application issues for prepaid credit card services at Visa, Inc."
-      ]
-    },
+                "Developed the Prepaid Administration System user interface using C#, ASP.NET 2.0 and SOAP Web Services for the prepaid credit card group at Visa, Inc.",
+                "Diagnosed and corrected production application issues for prepaid credit card services at Visa, Inc."
+            ]
+        },
         {
             "start": "Aug 2005",
             "end": "Aug 2006",
@@ -102,10 +103,10 @@
             "location": "Westminster, CO",
             "title": "Senior Software Engineer",
             "details": [
-        "Designed and implemented Time Clock Server using C#, .NET Framework 2.0, ASP.NET, and SQL Server",
-        "Designed and implemented a Pocket PC Time Clock application using C#, .NET Compact Framework 2.0, and SOAP Web Services"
-      ]
-    },
+                "Designed and implemented Time Clock Server using C#, .NET Framework 2.0, ASP.NET, and SQL Server",
+                "Designed and implemented a Pocket PC Time Clock application using C#, .NET Compact Framework 2.0, and SOAP Web Services"
+            ]
+        },
         {
             "start": "Feb 1998",
             "end": "Aug 2005",
@@ -113,9 +114,9 @@
             "location": "Golden, CO",
             "title": "Sr. Systems Analyst/Programmer",
             "details": [
-        "Designed and implemented a number of web, desktop and mobile applications to facilitate sample tracking and environmental cleanup using ASP.NET, .NET Windows Forms, C#, Oracle, SQL Server, XAML, XML, and Palm OS."
-      ]
-    },
+                "Designed and implemented a number of web, desktop and mobile applications to facilitate sample tracking and environmental cleanup using ASP.NET, .NET Windows Forms, C#, Oracle, SQL Server, XAML, XML, and Palm OS."
+            ]
+        },
         {
             "start": "Feb 2008",
             "end": "Aug 2009",
@@ -123,9 +124,9 @@
             "location": "Lakewood, CO",
             "title": "Church Councilman",
             "details": [
-        "Elected council member and chairman of the Planning and Staffing committee in charge of with managing the human resources and planning needs for a staff of five full-time and seven part-time employees with a combined payroll in excess of $300,000."
-      ]
-    },
+                "Elected council member and chairman of the Planning and Staffing committee in charge of with managing the human resources and planning needs for a staff of five full-time and seven part-time employees with a combined payroll in excess of $300,000."
+            ]
+        },
         {
             "start": "June 2005",
             "end": "Feb 2008",
@@ -133,19 +134,16 @@
             "location": "Denver, CO",
             "title": "Board of Directors",
             "details": [
-        "Elected member of the Board of Directors of 501(c)7 non-profit with a budget of over $200,000 involved in decision making regarding revenue, marketing, tax status, and operation."
-      ]
-    }
-  ],
-    "Education": [
-        {
-            "start": "1997",
-            "end": "2001",
-            "company": "Bachelor of Science",
-            "location": "Boulder, CO",
-            "title": "University of Colorado at Boulder",
-            "details": [
-      ]
-    }
-  ]
+                "Elected member of the Board of Directors of 501(c)7 non-profit with a budget of over $200,000 involved in decision making regarding revenue, marketing, tax status, and operation."
+            ]
+        }
+    ],
+    "Education": [{
+        "start": "1997",
+        "end": "2001",
+        "company": "Bachelor of Science",
+        "location": "Boulder, CO",
+        "title": "University of Colorado at Boulder",
+        "details": []
+    }]
 }
