@@ -2077,3 +2077,10 @@ Icon for all respective meta
 }
 
 /* End Post Hero Images */
+
+/* Begin Twitter Timeline */
+body > div > div.timeline-Header.timeline-InformationCircle-widgetParent > h1 {
+    font-family: 'poiret_oneregular';
+}
+
+/* End Twitter Timeline */
