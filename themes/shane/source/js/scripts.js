@@ -229,22 +229,23 @@ jQuery(function($) {
         dataType: "jsonp",
         cache: false,
         success: function(response) {
-          response.data[0]["created_time_formatted"] = moment
-            .unix(response.data[0].created_time)
+          var firstItem = response.data.splice(0, 1)[0];
+          firstItem["created_time_formatted"] = moment
+            .unix(firstItem.created_time)
             .format("lll");
-          response.data[0].index = 0;
+          firstItem.index = 0;
           $.ajax({
             url:
-              "https://api.instagram.com/oembed?url=" + response.data[0].link,
+              "https://api.instagram.com/oembed?url=" + firstItem.link,
             crossDomain: true,
             dataType: "jsonp",
             success: function(embedResponse) {
-                response.data[0].embedHtml = embedResponse.html;
+                firstItem.embedHtml = embedResponse.html;
 
-              if (response.data[0].type === "video") {
-                $grid.append(videoTemplate(response.data[0]));
+              if (firstItem.type === "video") {
+                $grid.append(videoTemplate(firstItem));
               } else {
-                $grid.append(imageTemplate(response.data[0]));
+                $grid.append(imageTemplate(firstItem));
               }
               var photoItem = document.getElementsByClassName("photo-item")[0];
               var flexBasis = window
@@ -258,7 +259,7 @@ jQuery(function($) {
               } else if (flexBasis.indexOf("20%") >= 0) {
                 divisor = 5;
               }
-              for (var i = 1; i < Math.min(12, response.data.length); i++) {
+              for (var i = 0; i < Math.min(11, response.data.length); i++) {
                 var row = Math.floor(i / divisor);
 
                 if (row < 2) {
