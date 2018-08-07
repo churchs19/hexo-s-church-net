@@ -229,77 +229,70 @@ jQuery(function($) {
         dataType: "jsonp",
         cache: false,
         success: function(response) {
-          var firstItem = response.data.splice(0, 1)[0];
-          firstItem["created_time_formatted"] = moment
-            .unix(firstItem.created_time)
-            .format("lll");
-          firstItem.index = 0;
-          $.ajax({
-            url:
-              "https://api.instagram.com/oembed?url=" + firstItem.link,
-            crossDomain: true,
-            dataType: "jsonp",
-            success: function(embedResponse) {
-                firstItem.embedHtml = embedResponse.html;
+          // var firstItem = response.data.splice(0, 1)[0];
+          // firstItem["created_time_formatted"] = moment
+          //   .unix(firstItem.created_time)
+          //   .format("lll");
+          // firstItem.index = 0;
+          // $.ajax({
+          //   url: "https://api.instagram.com/oembed?url=" + firstItem.link,
+          //   crossDomain: true,
+          //   dataType: "jsonp",
+          //   success: function(embedResponse) {
+          //     firstItem.embedHtml = embedResponse.html;
 
-              if (firstItem.type === "video") {
-                $grid.append(videoTemplate(firstItem));
-              } else {
-                $grid.append(imageTemplate(firstItem));
-              }
-              var photoItem = document.getElementsByClassName("photo-item")[0];
-              var flexBasis = window
-                .getComputedStyle(photoItem)
-                .getPropertyValue("flex-basis");
-              var divisor = 2;
-              if (flexBasis.indexOf("33%") >= 0) {
-                divisor = 3;
-              } else if (flexBasis.indexOf("25%") >= 0) {
-                divisor = 4;
-              } else if (flexBasis.indexOf("20%") >= 0) {
-                divisor = 5;
-              }
-              for (var i = 0; i < Math.min(11, response.data.length); i++) {
-                var row = Math.floor(i / divisor);
+          //     if (firstItem.type === "video") {
+          //       $grid.append(videoTemplate(firstItem));
+          //     } else {
+          //       $grid.append(imageTemplate(firstItem));
+          //     }
+          //     var photoItem = document.getElementsByClassName("photo-item")[0];
+          //     var flexBasis = window
+          //       .getComputedStyle(photoItem)
+          //       .getPropertyValue("flex-basis");
+          //     var divisor = 2;
+          //     if (flexBasis.indexOf("33%") >= 0) {
+          //       divisor = 3;
+          //     } else if (flexBasis.indexOf("25%") >= 0) {
+          //       divisor = 4;
+          //     } else if (flexBasis.indexOf("20%") >= 0) {
+          //       divisor = 5;
+          //     }
+          response.data.forEach(function(item, index) {
+            // var row = Math.floor(index / divisor);
+            if (index < 8) {
+              $.ajax({
+                url: "https://api.instagram.com/oembed?url=" + item.link,
+                crossDomain: true,
+                dataType: "jsonp",
+                success: function(embedItemResponse) {
+                  item.embedHtml = embedItemResponse.html;
+                  item.index = index + 1;
 
-                if (row < 2) {
-                    var $i = i;
-                    $.ajax({
-                    url:
-                      "https://api.instagram.com/oembed?url=" +
-                      response.data[$i].link,
-                    crossDomain: true,
-                    dataType: "jsonp",
-                    success: function(embedItemResponse) {
-                      response.data[$i].embedHtml = embedItemResponse.html;
-                      response.data[$i].index = $i;
+                  item["created_time_formatted"] = moment
+                    .unix(item.created_time)
+                    .format("lll");
 
-                      response.data[$i]["created_time_formatted"] = moment
-                        .unix(response.data[$i].created_time)
-                        .format("lll");
-
-                      if (response.data[$i].type === "video") {
-                        $grid.append(videoTemplate(response.data[$i]));
-                      } else {
-                        $grid.append(imageTemplate(response.data[$i]));
-                      }
-                    }
-                  });
+                  if (item.type === "video") {
+                    $grid.append(videoTemplate(item));
+                  } else {
+                    $grid.append(imageTemplate(item));
+                  }
                 }
-              }
+              });
             }
-          }).then(function () {
-            $grid
-            .find("a.single_image")
-            .attr("rel", "gallery")
-            .fancybox({
-
-            });
           });
         }
+      }).then(function() {
+        $grid
+          .find("a.single_image")
+          .attr("rel", "gallery")
+          .fancybox({});
       });
     }
   });
+  //   }
+  // });
 
   // -------------------------------------------------------------
   // Scalable Images
