@@ -1396,9 +1396,6 @@ Resume Timeline
 
 /* === Blog Section === */
 
-.latest-blog-section {
-}
-
 .latest-blog-section .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -1499,9 +1496,6 @@ Resume Timeline
 
 .entry-header {
   padding: 0 12px;
-}
-
-.post-meta {
 }
 
 ul.article-tag-list:before {
@@ -1663,9 +1657,6 @@ Icon for all respective meta
 }
 
 /* === Contact Section === */
-
-.contact-section {
-}
 
 .contact-section strong {
   display: block;
