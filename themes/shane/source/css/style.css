@@ -723,6 +723,26 @@ SOCIAL ICON
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 } */
+.fancybox-content {
+  padding: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .fancybox-content {
+    width: 320px;
+  }
+}
+
+@media (min-width: 992px) {
+  .fancybox-content {
+    width: 500px;
+  }
+} 
+
+iframe.instagram-media {
+  margin: 0 !important;
+}
 
 .photos-section figcaption {
     position: absolute;
