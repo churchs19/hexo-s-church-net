@@ -1,4 +1,4 @@
-/*global jQuery, WOW, moment, _ */
+/*global jQuery, WOW, moment, _, instgrm */
 
 jQuery(function($) {
   "use strict";
@@ -200,18 +200,18 @@ jQuery(function($) {
   // https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432
   $(document).ready(function() {
     $().fancybox({
-      selector: '[data-fancybox="gallery"]'
+      selector: '[data-fancybox="gallery"]',
+      onActivate: function () {
+        instgrm.Embeds.process();
+      }      
     });
     if ($(".photos-section").length > 0) {
-      // var $grid = $('.photos-section ul.grid'),
-      //     imageTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox-group="gallery"><i class="fa fa-picture-o"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption></figure></li>'),
-      //     videoTemplate = _.template('<li><figure><img src="<%- images.low_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image fancybox.html" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-poster="<%- images.standard_resolution.url %>" data-width="<%- videos.standard_resolution.width %>" data-height="<%- videos.standard_resolution.height %>" data-fancybox-group="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption></figure></li>');
       var $grid = $(".photos-section .grid"),
         imageTemplate = _.template(
           '<figure class="photo-item"><img src="<%- images.standard_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image" data-src="#instagram-<%- index %>" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox="gallery"><i class="fa fa-picture-o"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption><div  class="instagram-embed" id="instagram-<%- index %>"><%= embedHtml %></div></figure>'
         ),
         videoTemplate = _.template(
-          '<figure class="photo-item"><img src="<%- images.standard_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image" data-src="#instagram-<%- index %>" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-poster="<%- images.standard_resolution.url %>" data-width="<%- videos.standard_resolution.width %>" data-height="<%- videos.standard_resolution.height %>" data-fancybox="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption><div class="instagram-embed" id="instagram-<%- index %>"><%= embedHtml %></div></figure>'
+          '<figure class="photo-item"><img src="<%- images.standard_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image" data-src="#instagram-<%- index %>" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption><div class="instagram-embed" id="instagram-<%- index %>"><%= embedHtml %></div></figure>'
         );
       $.ajax({
         url:
@@ -220,45 +220,15 @@ jQuery(function($) {
         dataType: "jsonp",
         cache: false,
         success: function(response) {
-          // var firstItem = response.data.splice(0, 1)[0];
-          // firstItem["created_time_formatted"] = moment
-          //   .unix(firstItem.created_time)
-          //   .format("lll");
-          // firstItem.index = 0;
-          // $.ajax({
-          //   url: "https://api.instagram.com/oembed?url=" + firstItem.link,
-          //   crossDomain: true,
-          //   dataType: "jsonp",
-          //   success: function(embedResponse) {
-          //     firstItem.embedHtml = embedResponse.html;
-
-          //     if (firstItem.type === "video") {
-          //       $grid.append(videoTemplate(firstItem));
-          //     } else {
-          //       $grid.append(imageTemplate(firstItem));
-          //     }
-          //     var photoItem = document.getElementsByClassName("photo-item")[0];
-          //     var flexBasis = window
-          //       .getComputedStyle(photoItem)
-          //       .getPropertyValue("flex-basis");
-          //     var divisor = 2;
-          //     if (flexBasis.indexOf("33%") >= 0) {
-          //       divisor = 3;
-          //     } else if (flexBasis.indexOf("25%") >= 0) {
-          //       divisor = 4;
-          //     } else if (flexBasis.indexOf("20%") >= 0) {
-          //       divisor = 5;
-          //     }
           response.data.forEach(function(item, index) {
-            // var row = Math.floor(index / divisor);
-            if (index < 8) {
+            if (index < 12) {
               $.ajax({
-                url: "https://api.instagram.com/oembed?url=" + item.link,
+                url: "https://api.instagram.com/oembed?url=" + item.link + "&omitscript=true",
                 crossDomain: true,
                 dataType: "jsonp",
                 success: function(embedItemResponse) {
                   item.embedHtml = embedItemResponse.html;
-                  item.index = index + 1;
+                  item.index = index;
 
                   item["created_time_formatted"] = moment
                     .unix(item.created_time)
@@ -275,12 +245,6 @@ jQuery(function($) {
           });
         }
       });
-      // }).then(function() {
-      //   $grid
-      //     .find("a.single_image")
-      //     .attr("rel", "gallery")
-      //     .fancybox({});
-      // });
     }
   });
   //   }
