@@ -1,0 +1,74 @@
+<% if (is_post()) { %>
+    <script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BlogPosting",
+            <% if (post.title) { %>
+            "headline": "<%= post.title %> | <%= config.title %>",
+            <% } else { %>
+ 			"headline": "<%= config.title %>",
+            <% } %>
+			<% if (post.description){ %>
+			"description": "<%= post.description %>",
+			<% } else if (post.excerpt){ %>
+			"description": "<%= post.excerpt %>",
+			<% } %>
+			"mainEntityOfPage":{
+			    "@type":"WebPage",
+			    "@id":"<%= config.url %>/<%= post.path %>"
+			},
+			"datePublished": "<%= post.date.toISOString() %>",
+			"dateModified": "<%= post.updated.toISOString() %>",
+			<% if (post.eyeCatchImage && post.eyeCatchImage != "" && post.eyeCatchImageProperty && post.eyeCatchImageProperty.width && post.eyeCatchImageProperty.height){ %>
+			"image": {
+				"@type": "ImageObject",
+				"url": "<%= post.eyeCatchImage %>",
+				"width" : <%= post.eyeCatchImageProperty.width %>,
+				"height" : <%= post.eyeCatchImageProperty.height %>
+			},
+			<% } %>
+			"author": {
+			    "@type": "Person",
+			    "name": "<%= config.author %>"
+			},
+			"publisher": {
+			    "@type": "Organization",
+			    "name": "<%= config.title %>"
+			    <% if (config.site_logo){ %>
+			    ,
+			    "logo": "<%= config.url %>/<%= config.site_logo %>"
+			    <% } %>
+			}
+		}
+	</script>
+<% } else { %>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "<%= config.url %>",
+  <% if (config.site_logo) { %>
+  "logo": "<%= config.url %>/<%= config.site_logo %>",
+  <% } %>
+  "name": "<%= config.author %>",
+  <% if (config.phone) { %>
+  "telephone": "<%= config.phone %>"
+  <% } %>
+  <% if (config.email) { %>
+  ,
+  "email": "<%= config.email %>"
+  <% } %>
+  <% if (config.social) { %>
+  ,
+  "sameAs": [
+<% for (var i = 0; i < config.social.length; i++) { %>    
+  <% if (i > 0) { %>
+    ,
+  <% } %>
+  	"<%= config.social[i] %>"
+<% } %>
+  ]
+  <% } %>
+}
+</script>
+<% } %>

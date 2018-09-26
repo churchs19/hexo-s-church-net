@@ -7,8 +7,16 @@ title: Shane Church
 subtitle: Software Developer
 description: Software Developer, Dad, Husband, Colorado Rockies and CU Buffs fan, and Lego enthusiast
 author: Shane Church
+phone: +13039492700
+email: shane@s-church.net
 language:
 timezone: America/Chicago
+site_logo: images/SCLogo-purple@2x.png
+social:
+- https://www.instagram.com/churchs19/
+- https://twitter.com/shaneschurch
+- https://github.com/churchs19
+- https://www.linkedin.com/in/shanechurch
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
