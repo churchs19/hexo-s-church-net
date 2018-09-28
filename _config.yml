@@ -38,6 +38,7 @@ i18n_dir: :lang
 skip_render: 
 - software/**/**
 - resume.pdf
+- BingSiteAuth.xml
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
