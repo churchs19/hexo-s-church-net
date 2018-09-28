@@ -8,4 +8,4 @@ Yesterday morning I drove down to Denver for the Obama rally.  I got downtown r
 
 Additional coverage of the rally at the [Rocky Mountain News](http://rockymountainnews.com/news/2008/oct/26/obama-pushes-early-voting-theme-45000-fort-collins/?partner=RSS) and [Denver Post](http://www.denverpost.com/ci_10824239?source=rss).
 
-[My photos from the rally are here](/PhotoAlbum.aspx?ID=OBAMA20081026).
+[My photos from the rally are here](http://wwwazure.s-church.net/PhotoAlbum/Album/OBAMA20081026).

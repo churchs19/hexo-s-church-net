@@ -24,4 +24,4 @@ When we got back to Denver, we had dinner of hamburgers and hot dogs on the gril
 
 More photos from the hike will be forthcoming soon.
 
-_Update - August 26, 2008 -_ [Photos from Mt. Evans on August 23, 2008](/PhotoAlbum.aspx?ID=MTEVANS20080823)
+_Update - August 26, 2008 -_ [Photos from Mt. Evans on August 23, 2008](http://wwwazure.s-church.net/PhotoAlbum/Album/MTEVANS20080823)

@@ -9,4 +9,4 @@ It's official.  This morning was my 30th birthday.  I woke up to what seems to
 
 On Saturday night, Andrea threw a wonderful birthday party for me.  We had about 40 people over, including family, friends, friends from church, and former coworkers.  We had a ton of great food, though my chile rellenos were clearly the hit of the party.  The party started around 6 pm and the last people left around 1 am.  It really was a great time.
 
-Check out [photos from the party and photos from my actual birthday in my photo album](/PhotoAlbum.aspx?ID=30THBIRTHDAY).
+Check out [photos from the party and photos from my actual birthday in my photo album](http://wwwazure.s-church.net/PhotoAlbum/Album/30THBIRTHDAY).

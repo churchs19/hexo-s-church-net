@@ -14,4 +14,4 @@ At this point, we went and met Andrea and her family, and then headed over to th
 
 On Sunday morning, we got up and went over to the hotel to have breakfast with my mom and Andrea's family.  We then went back and quickly finished packing up Andrea's apartment into the truck and her Jeep, before mom and I had to head to the airport to fly home.
 
-It was definitely a great weekend, and probably one of my last trips to the Buffalo area.  Pictures are posted on my [Photo page](/edit/Photo.aspx).
+It was definitely a great weekend, and probably one of my last trips to the Buffalo area.  Pictures are posted on my [Photo page](/edithttp://wwwazure.s-church.net/PhotoAlbum).

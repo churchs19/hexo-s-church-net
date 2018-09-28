@@ -14,4 +14,4 @@ On Saturday, Andrea and I got up and went to Younkers to look at silver.  We ha
 
 On Sunday, we got on the road back to Denver around 10:30.  After a brief interlude of taking pictures of the new MidAmerican Energy wind farm in western Iowa, we cruised the rest of the way to Denver.  We got terrible gas mileage because of a strong cross wind the whole way and got back into Denver around 8 pm. 
 
-Pictures from the weekend are in the [photo album](/PhotoAlbum.aspx?ID=THANKSGIVING2008).
+Pictures from the weekend are in the [photo album](http://wwwazure.s-church.net/PhotoAlbum/Album/THANKSGIVING2008).

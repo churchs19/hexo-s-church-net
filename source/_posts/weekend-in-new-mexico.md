@@ -18,4 +18,4 @@ On Sunday morning, I got up and Dad had made pancakes for breakfast.  I then he
 
 Following lunch, I finally headed out of Los Alamos on my way back to Denver.  Along the way I stopped in San Luis, Colorado, the oldest town in Colorado, because I had been curious about the church on top of the mesa in town.  It turns out that the church is the Stations of the Cross Shrine, one of only two officially recognized Catholic shrines in Colorado.  On the trail leading up to the chapel, are a series of bronze statues depicting the stations of the cross by San Luis artist, Hubert Maestas.  The mesa is officially known as "la Mesa de la Piedad y de la Misericordia" or the Hill of Piety and Mercy.
 
-Following my hike up to the Stations of the Cross Shrine, I continued home to Denver, ending what was a good weekend with family in New Mexico.  Photos from the weekend are in my [Photo Album](/Photo.aspx).
+Following my hike up to the Stations of the Cross Shrine, I continued home to Denver, ending what was a good weekend with family in New Mexico.  Photos from the weekend are in my [Photo Album](http://wwwazure.s-church.net/PhotoAlbum).

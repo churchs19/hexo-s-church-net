@@ -59,4 +59,4 @@ After the Governor's Mansion, we walked down to the [California State Railroad M
 
 After leaving the Railroad Museum, we walked back to our car then drove over to the Boudin SF cafe for lunch and then drove out to the Sacramento airport for our flight back to Denver.  The flight home was about an hour late, but was uneventful, ending a wonderful trip.
 
-Pictures from [San Francisco](/PhotoAlbum.aspx?ID=SANFRANCISCO200903), [Napa](/PhotoAlbum.aspx?ID=NAPA200903), [Sacramento](/PhotoAlbum.aspx?ID=SACRAMENTO200903), and [Sarah and Liz's Wedding](/PhotoAlbum.aspx?ID=SARAHBACONWEDDING20090308) are in the [photo album](/Photo.aspx).
+Pictures from [San Francisco](http://wwwazure.s-church.net/PhotoAlbum/Album/SANFRANCISCO200903), [Napa](http://wwwazure.s-church.net/PhotoAlbum/Album/NAPA200903), [Sacramento](http://wwwazure.s-church.net/PhotoAlbum/Album/SACRAMENTO200903), and [Sarah and Liz's Wedding](http://wwwazure.s-church.net/PhotoAlbum/Album/SARAHBACONWEDDING20090308) are in the [photo album](http://wwwazure.s-church.net/PhotoAlbum).

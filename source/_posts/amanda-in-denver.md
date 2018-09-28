@@ -19,4 +19,4 @@ After leaving Loveland, we drove through the Eisenhower Tunnel and then drove ov
 
 On Monday, we had the day off, but had a bunch of stuff scheduled, so we met Amanda and Christine at Dino's for lunch before she had to head back to San Diego that night.  It was a great weekend and we had a lot of fun.
 
-Pictures from the [16th](/PhotoAlbum.aspx?ID=AMANDAINDENVER20090116), 17th ([Coors](/PhotoAlbum.aspx?ID=COORS20090117) & [Coors Field](/PhotoAlbum.aspx?ID=COORSFIELD20090117)), and [18th](/PhotoAlbum.aspx?ID=LOVELAND20090118) are in the Photo Album.
+Pictures from the [16th](http://wwwazure.s-church.net/PhotoAlbum/Album/AMANDAINDENVER20090116), 17th ([Coors](http://wwwazure.s-church.net/PhotoAlbum/Album/COORS20090117) & [Coors Field](http://wwwazure.s-church.net/PhotoAlbum/Album/COORSFIELD20090117)), and [18th](http://wwwazure.s-church.net/PhotoAlbum/Album/LOVELAND20090118) are in the Photo Album.
