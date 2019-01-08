@@ -225,7 +225,7 @@ jQuery(function($) {
               $.ajax({
                 url: "https://api.instagram.com/oembed?url=" + item.link + "&omitscript=true",
                 crossDomain: true,
-                dataType: "jsonp",
+                dataType: "json",
                 success: function(embedItemResponse) {
                   item.embedHtml = embedItemResponse.html;
                   item.index = index;
