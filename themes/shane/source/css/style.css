@@ -1331,6 +1331,17 @@ Resume Timeline
   height: 505px;
 }
 
+.gallery-cell span,
+.gallery-cell a {
+  margin-right: 20px;
+}
+
+.gallery-cell.fullyfeedly {
+  background: url("../../images/fullyfeedly-home-bg.jpg") no-repeat center
+    center;
+  background-size: cover;  
+}
+
 .gallery-cell.stirling-money {
   background: url("../../images/stirling-money-home-bg.jpg") no-repeat center
     center;
@@ -2078,9 +2089,3 @@ Icon for all respective meta
 }
 
 /* End Post Hero Images */
-
-#twitter .timeline-Header-title {
-  font-family: "poiret_oneregular" !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-}
