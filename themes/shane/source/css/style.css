@@ -2078,3 +2078,9 @@ Icon for all respective meta
 }
 
 /* End Post Hero Images */
+
+#twitter .timeline-Header-title {
+  font-family: "poiret_oneregular" !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}

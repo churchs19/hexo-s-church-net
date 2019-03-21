@@ -201,9 +201,9 @@ jQuery(function($) {
   $(document).ready(function() {
     $().fancybox({
       selector: '[data-fancybox="gallery"]',
-      onActivate: function () {
+      onActivate: function() {
         instgrm.Embeds.process();
-      }      
+      }
     });
     if ($(".photos-section").length > 0) {
       var $grid = $(".photos-section .grid"),
@@ -223,7 +223,10 @@ jQuery(function($) {
           response.data.forEach(function(item, index) {
             if (index < 12) {
               $.ajax({
-                url: "https://api.instagram.com/oembed?url=" + item.link + "&omitscript=true",
+                url:
+                  "https://api.instagram.com/oembed?url=" +
+                  item.link +
+                  "&omitscript=true",
                 crossDomain: true,
                 dataType: "json",
                 success: function(embedItemResponse) {
@@ -247,8 +250,18 @@ jQuery(function($) {
       });
     }
   });
-  //   }
-  // });
+
+  // -------------------------------------------------------------
+  // Twitter Widget Styling
+  // -------------------------------------------------------------
+  $(document).ready(function() {
+    $("#twitter iframe").waitUntilExists(function() {
+      $("#twitter iframe")
+        .contents()
+        .find("head")
+        .append("<style>.timeline-Header { display: none; }</style>");
+    });
+  });
 
   // -------------------------------------------------------------
   // Scalable Images
