@@ -1,31 +1,29 @@
 /*global jQuery, WOW, moment, _, instgrm */
 
-jQuery(function($) {
+jQuery(function ($) {
   "use strict";
 
   // ----------------------------------------------
   // Preloader
   // ----------------------------------------------
 
-  $(window).ready(function() {
+  $(window).ready(function () {
     $("#pre-status").fadeOut();
-    $("#tt-preloader")
-      .delay(350)
-      .fadeOut("slow");
+    $("#tt-preloader").delay(350).fadeOut("slow");
   });
 
   // -------------------------------------------------------------
   // Animated scrolling / Scroll Up
   // -------------------------------------------------------------
 
-  (function() {
-    $("a[href*=#]").bind("click", function(e) {
+  (function () {
+    $("a[href*=#]").bind("click", function (e) {
       var anchor = $(this);
       $("html, body")
         .stop()
         .animate(
           {
-            scrollTop: $(anchor.attr("href")).offset().top
+            scrollTop: $(anchor.attr("href")).offset().top,
           },
           1000
         );
@@ -36,9 +34,9 @@ jQuery(function($) {
   // -------------------------------------------------------------
   // Full Screen Slider
   // -------------------------------------------------------------
-  (function() {
-    var resizeContainer = function() {
-      $(".tt-fullHeight").each(function() {
+  (function () {
+    var resizeContainer = function () {
+      $(".tt-fullHeight").each(function () {
         if ($(this).hasClass("tt-fullHeight-feature")) {
           $(this).height($(window).height() - $("header.header").height());
         } else {
@@ -56,14 +54,14 @@ jQuery(function($) {
   // Sticky Menu
   // -------------------------------------------------------------
 
-  (function() {
+  (function () {
     $(".header").sticky({
-      topSpacing: 0
+      topSpacing: 0,
     });
 
     $("body").scrollspy({
       target: ".navbar-custom",
-      offset: 70
+      offset: 70,
     });
   })();
 
@@ -71,8 +69,8 @@ jQuery(function($) {
   // Back To Top
   // -------------------------------------------------------------
 
-  (function() {
-    $(window).scroll(function() {
+  (function () {
+    $(window).scroll(function () {
       if ($(this).scrollTop() > 100) {
         $(".scroll-up").fadeIn();
       } else {
@@ -84,12 +82,12 @@ jQuery(function($) {
   // -------------------------------------------------------------
   // SHARE LINKS
   // -------------------------------------------------------------
-  $(document).ready(function() {
+  $(document).ready(function () {
     $("body")
-      .on("click", function() {
+      .on("click", function () {
         $(".article-share-box.on").removeClass("on");
       })
-      .on("click", ".article-share-link", function(e) {
+      .on("click", ".article-share-link", function (e) {
         e.stopPropagation();
 
         var $this = $(this),
@@ -132,7 +130,7 @@ jQuery(function($) {
               encodedUrl +
               '" target="_blank" title="Google+"></a>',
             "</div>",
-            "</div>"
+            "</div>",
           ].join("");
 
           box = $(html);
@@ -145,17 +143,17 @@ jQuery(function($) {
         box
           .css({
             top: offset.top + 25,
-            left: offset.left + box.width() / 2 - $this.width() / 2
+            left: offset.left + box.width() / 2 - $this.width() / 2,
           })
           .addClass("on");
       })
-      .on("click", ".article-share-box", function(e) {
+      .on("click", ".article-share-box", function (e) {
         e.stopPropagation();
       })
-      .on("click", ".article-share-box-input", function() {
+      .on("click", ".article-share-box-input", function () {
         $(this).select();
       })
-      .on("click", ".article-share-box-link", function(e) {
+      .on("click", ".article-share-box-link", function (e) {
         e.preventDefault();
         e.stopPropagation();
 
@@ -171,7 +169,7 @@ jQuery(function($) {
   // STELLAR FOR BACKGROUND SCROLLING
   // -------------------------------------------------------------
 
-  $(window).load(function() {
+  $(window).load(function () {
     if (
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
@@ -179,7 +177,7 @@ jQuery(function($) {
     ) {
       $.stellar({
         horizontalScrolling: false,
-        responsive: true
+        responsive: true,
       });
     }
   });
@@ -188,9 +186,9 @@ jQuery(function($) {
   // WOW JS
   // -------------------------------------------------------------
 
-  (function() {
+  (function () {
     new WOW({
-      mobile: false
+      mobile: false,
     }).init();
   })();
 
@@ -198,64 +196,20 @@ jQuery(function($) {
   //  Instagram Feed
   // -------------------------------------------------------------
   // https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432
-  $(document).ready(function() {
+  $(document).ready(function () {
     $().fancybox({
       selector: '[data-fancybox="gallery"]',
-      onActivate: function() {
+      onActivate: function () {
         instgrm.Embeds.process();
-      }
+      },
     });
-    if ($(".photos-section").length > 0) {
-      var $grid = $(".photos-section .grid"),
-        imageTemplate = _.template(
-          '<figure class="photo-item"><img src="<%- images.standard_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- images.standard_resolution.url %>" class="single_image" data-src="#instagram-<%- index %>" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox="gallery"><i class="fa fa-picture-o"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption><div  class="instagram-embed" id="instagram-<%- index %>"><%= embedHtml %></div></figure>'
-        ),
-        videoTemplate = _.template(
-          '<figure class="photo-item"><img src="<%- images.standard_resolution.url %>" alt=""><figcaption><div class="caption-content"><a href="<%- videos.standard_resolution.url %>" class="single_image" data-src="#instagram-<%- index %>" data-title="<%- caption.text %> - <%- created_time_formatted %>" data-link="<%- link %>" data-fancybox="gallery"><i class="fa fa-video-camera"></i><p><%- caption.text %></p><p><%- created_time_formatted %></p></a></div></figcaption><div class="instagram-embed" id="instagram-<%- index %>"><%= embedHtml %></div></figure>'
-        );
-      $.ajax({
-        url:
-          "https://api.instagram.com/v1/users/1511680150/media/recent?access_token=1511680150.b6f5ef5.3e2b199940114508b2c577bc906d4697",
-        crossDomain: true,
-        dataType: "jsonp",
-        cache: false,
-        success: function(response) {
-          response.data.forEach(function(item, index) {
-            if (index < 12) {
-              $.ajax({
-                url:
-                  "https://api.instagram.com/oembed?url=" +
-                  item.link +
-                  "&omitscript=true",
-                crossDomain: true,
-                dataType: "json",
-                success: function(embedItemResponse) {
-                  item.embedHtml = embedItemResponse.html;
-                  item.index = index;
-
-                  item["created_time_formatted"] = moment
-                    .unix(item.created_time)
-                    .format("lll");
-
-                  if (item.type === "video") {
-                    $grid.append(videoTemplate(item));
-                  } else {
-                    $grid.append(imageTemplate(item));
-                  }
-                }
-              });
-            }
-          });
-        }
-      });
-    }
   });
 
   // -------------------------------------------------------------
   // Twitter Widget Styling
   // -------------------------------------------------------------
-  $(document).ready(function() {
-    $("#twitter iframe").waitUntilExists(function() {
+  $(document).ready(function () {
+    $("#twitter iframe").waitUntilExists(function () {
       $("#twitter iframe")
         .contents()
         .find("head")
@@ -266,14 +220,14 @@ jQuery(function($) {
   // -------------------------------------------------------------
   // Scalable Images
   // -------------------------------------------------------------
-  $(document).ready(function() {
+  $(document).ready(function () {
     $("img.scale").imageScale();
-    $(window).resize(function() {
+    $(window).resize(function () {
       $("img.scale").imageScale();
     });
   });
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     $("img.lazy").lazyload({ effect: "fadeIn", threshold: 200 });
   });
 });

@@ -13,10 +13,10 @@ language:
 timezone: America/Chicago
 site_logo: images/SCLogo-purple@2x.png
 social:
-- https://www.instagram.com/churchs19/
-- https://twitter.com/shaneschurch
-- https://github.com/churchs19
-- https://www.linkedin.com/in/shanechurch
+  - https://www.instagram.com/churchs19/
+  - https://twitter.com/shaneschurch
+  - https://github.com/churchs19
+  - https://www.linkedin.com/in/shanechurch
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -35,10 +35,10 @@ archive_dir: blog
 category_dir: categories
 code_dir: software/code
 i18n_dir: :lang
-skip_render: 
-- software/**/**
-- resume.pdf
-- BingSiteAuth.xml
+skip_render:
+  - software/**/**
+  - resume.pdf
+  - BingSiteAuth.xml
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
@@ -84,7 +84,7 @@ deploy:
   type: git
   repo: git@github.com:churchs19/churchs19.github.io.git
   branch: master
-  
+
 feed:
   type: atom
   path: atom.xml
@@ -96,26 +96,26 @@ archive_generator:
   yearly: true
   monthly: true
   daily: false
-  
+
 sitemap:
   path: sitemap.xml
-  
+
 disqus_shortname: s-church
 
-hire: true
+hire: false
 
 generator_amp:
-  templateDir:  themes/shane-amp
+  templateDir: themes/shane-amp
   assetDistDir: amp-dist
   cssFilePath: amp.css
   templateFilePath: amp.ejs
   logo:
-    path:   SCLogo-purple_amp.png
-    width:  600
+    path: SCLogo-purple_amp.png
+    width: 600
     height: 60
-  substituteTitleImage: 
-    path:   default-post.jpg
-    width:  512
+  substituteTitleImage:
+    path: default-post.jpg
+    width: 512
     height: 512
-  warningLog: false   # If you want to validate, please set true.
+  warningLog: false # If you want to validate, please set true.
   google_analytics: UA-74778051-1

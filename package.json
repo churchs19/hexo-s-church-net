@@ -2,6 +2,11 @@
   "name": "hexo-s-church-net",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "instagram": "node ./instagram-update.js",
+    "serve": "npx hexo serve",
+    "build": "npm run instagram && npx hexo generate"
+  },
   "hexo": {
     "version": "4.2.1"
   },
@@ -22,7 +27,9 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-tag-fontawesome": "^1.0.0"
+    "hexo-tag-fontawesome": "^1.0.0",
+    "moment": "^2.27.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {}
 }
