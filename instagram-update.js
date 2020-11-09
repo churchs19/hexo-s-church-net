@@ -24,12 +24,14 @@ const updateInstagram = async function () {
     try {
       const item = instagramData[index];
       var oembedData = await fetch(
-        `https://api.instagram.com/oembed?url=${item.permalink}&omitscript=true`
-      ).then((response) => response.json());
+        `https://graph.facebook.com/v8.0/instagram_oembed?url=${item.permalink}&access_token=${process.env.FACEBOOK_CLIENT_KEY}&omitscript=true`
+      ).then((response) => {
+        return response.json();
+      });
       item.embedHtml = oembedData.html;
       item.timestampFormatted = moment(item.timestamp).format("lll");
     } catch (e) {
-      console.log(JSON.stringify(item));
+      console.log(e);
       throw e;
     }
   }
