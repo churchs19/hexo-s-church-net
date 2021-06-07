@@ -40,6 +40,8 @@ skip_render:
   - resume.pdf
   - BingSiteAuth.xml
   - .well-known/**/**
+include:
+  - .well-known/**/**
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
