@@ -30,4 +30,4 @@ After the game, we headed back to the hotel and relaxed for a while before we we
 
 Wednesday morning, March 4th, we got up early, and Lauren took us over to the airport to continue our trip in California while Lauren and Cora drove back to Denver.
 
-[Photos from Spring Training](http://wwwazure.s-church.net/PhotoAlbum/Album/SPRINGTRAINING2009)
+<!--[Photos from Spring Training](http://wwwazure.s-church.net/PhotoAlbum/Album/SPRINGTRAINING2009)-->

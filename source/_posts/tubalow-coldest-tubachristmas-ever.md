@@ -6,7 +6,7 @@ photos:
 ---
 Today was TubaChristmas 2008 in Denver.  After church this morning, I drove downtown in the snow to play in TubaChristmas.  This year was the smallest TubaChristmas attendance that I've ever seen, with about 150 tubas and euphoniums.  The temperature outside at the start of the concert at 1 pm was officially -3° F, or "Tubalow" as the joke went.  Valves were freezing all over and I managed to be one of about 25 whole people who had no frozen valves at the end of the concert.  It definitely was one of the worst TubaChristmas concerts that I've been a part of as far as music goes, but one of the most entertaining because of all the joking and laughing around the frozen valves.
 
-[Photos from TubaChristmas 2008](http://wwwazure.s-church.net/PhotoAlbum/Album/TUBACHRISTMAS2008)
+<!--[Photos from TubaChristmas 2008](http://wwwazure.s-church.net/PhotoAlbum/Album/TUBACHRISTMAS2008)-->
 
 **_Update - December 15, 2008 10:10 am:_**
 
