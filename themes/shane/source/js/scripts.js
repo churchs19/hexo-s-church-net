@@ -196,14 +196,14 @@ jQuery(function ($) {
   //  Instagram Feed
   // -------------------------------------------------------------
   // https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432
-  $(document).ready(function () {
-    $().fancybox({
-      selector: '[data-fancybox="gallery"]',
-      onActivate: function () {
-        instgrm.Embeds.process();
-      },
-    });
-  });
+  // $(document).ready(function () {
+  //   $().fancybox({
+  //     selector: '[data-fancybox="gallery"]',
+  //     onActivate: function () {
+  //       instgrm.Embeds.process();
+  //     },
+  //   });
+  // });
 
   // -------------------------------------------------------------
   // Twitter Widget Styling

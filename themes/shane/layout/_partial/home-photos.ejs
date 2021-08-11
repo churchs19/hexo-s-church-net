@@ -7,16 +7,17 @@
         <% for (var i=0; i < site.data.instagram.length; i++) { var item =
         site.data.instagram[i]; %>
         <figure class="photo-item">
-          <img src="<%= item.media_url %>" alt="" />
+          <% if (item.thumbnail_url) { %>
+          <img src="<%= item.thumbnail_url %>" alt="<%= item.caption %>" />
+          <% } else { %>
+          <img src="<%= item.media_url %>" alt="<%= item.caption %>" />
+          <% } %>
           <figcaption>
             <div class="caption-content">
               <a
-                href="<%= item.media_utl %>"
+                href="<%= item.permalink %>"
                 class="single_image"
-                data-src="#instagram-<%= item.id %>"
-                data-title="<%= item.caption %> - <%= item.timestampFormatted %>"
-                data-link="<%= item.permalink %>"
-                data-fancybox="gallery"
+                target="_blank"
               >
                 <% if (item.media_type === "VIDEO") { %>
                 <i class="fa fa-video-camera"></i>
@@ -28,9 +29,6 @@
               >
             </div>
           </figcaption>
-          <div class="instagram-embed" id="instagram-<%= item.id %>">
-            <%- item.embedHtml %>
-          </div>
         </figure>
         <% } %>
       </div>

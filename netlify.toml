@@ -1,10 +1,10 @@
 [build]
   command = "npm run build"
-  functions = "functions" # netlify dev uses this directory to scaffold and serve your functions
   publish = "public"
 
 # note: each of these fields are OPTIONAL, with an exception that when you're specifying "command" and "port", you must specify framework = "#custom"
 [dev]
   framework = "hexo"
+  #command = "npm run instagram"
   command = "npm run serve" # Command to start your dev server
   autoLaunch = true # a Boolean value that determines if Netlify Dev launches the local server address in your browser
