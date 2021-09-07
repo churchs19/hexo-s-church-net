@@ -3,10 +3,10 @@ title: Welcome Owen James!
 date: 2021-09-07 12:38:56
 tags:
   - Owen
-featured_image: 2021-09-07-welcome-owen-james/20210907_160117953_iOS.jpg.jpg
+featured_image: 2021-09-07-welcome-owen-james/20210907_160117953_iOS.jpg
 ampSettings: 
  titleImage:
-   path: journal_images/2021-09-07-welcome-owen-james/20210907_160117953_iOS.jpg.jpg
+   path: journal_images/2021-09-07-welcome-owen-james/20210907_160117953_iOS.jpg
 photos:
 - /journal_images/2021-09-07-welcome-owen-james/20210831_134419519_iOS.jpg|Owen James
 
