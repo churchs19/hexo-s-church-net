@@ -38,11 +38,11 @@
 
                     <footer class="article-footer">
                         <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">
-                            <i class="fa fa-share-alt"></i> Share
+                            <i class="fa-regular fa-share-from-square"></i> Share
                         </a>
                         <% if (post.comments && config.disqus_shortname){ %>
                             <a href="#disqus_thread" class="article-comment-link">
-                                <i class="fa fa-comments-o"></i> Comments
+                                <i class="fa-regular fa-comments"></i> Comments
                             </a>
                             <% } %>
                                 <%- partial('post/tag') %>

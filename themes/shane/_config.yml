@@ -1,6 +1,7 @@
 # Header
 navbar_brand: /images/logo.png
 rss: /atom.xml
+mastodon: https://masto.ai/@shaneschurch
 
 # Content
 excerpt_link: Read More

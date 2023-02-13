@@ -1,6 +1,6 @@
-const fs = require("fs");
-const moment = require("moment");
-const fetch = require("node-fetch");
+import fs from "fs";
+import moment from "moment";
+import fetch from "node-fetch";
 
 console.log(
   `INSTAGRAM_PROXY_BASE_URL = '${process.env.INSTAGRAM_PROXY_BASE_URL}'`

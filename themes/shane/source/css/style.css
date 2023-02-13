@@ -62,8 +62,6 @@ body {
   font-size: 14px;
   color: #2a2a2f;
   background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-  -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -1609,7 +1607,8 @@ Icon for all respective meta
   display: inline;
 }
 
-.article-nav-link-wrap i.fa {
+.article-nav-link-wrap i.fa-solid,
+.article-nav-link-wrap i.fa-regular {
   padding-top: 7px;
   padding-right: 5px;
 }
@@ -1618,7 +1617,8 @@ Icon for all respective meta
   padding-right: 8px;
 }
 
-.article-footer i.fa {
+.article-footer i.fa-solid,
+.article-footer i.fa-regular {
   padding-right: 5px;
 }
 
@@ -1678,7 +1678,8 @@ Icon for all respective meta
   padding-top: 7px;
 }
 
-.contact-section i.fa {
+.contact-section i.fa-solid,
+.contact-section i.fa-regular {
   width: 45px;
   text-align: center;
 }
