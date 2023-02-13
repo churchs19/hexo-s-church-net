@@ -315,7 +315,7 @@ ul.list-check li {
 
 ul.list-check li::before {
   content: "\f00c";
-  font-family: fontawesome;
+  font: var(--fa-font-solid);
   color: #49488e;
   margin-right: 10px;
 }
@@ -1595,9 +1595,10 @@ Icon for all respective meta
 .the-time::before,
 .the-share::before,
 .the-comments::before {
-  font-family: FontAwesome;
+  font: var(--fa-font-solid);
   position: absolute;
   left: 0;
+  top: 10%;
 }
 
 .the-author div,
@@ -2006,11 +2007,11 @@ Icon for all respective meta
 .article-share-pinterest:before,
 .article-share-google:before {
   font-size: 20px;
-  font-family: FontAwesome;
+  font: var(--fa-font-brands);
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   margin-top: -10px;
   margin-left: -10px;
