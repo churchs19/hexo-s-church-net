@@ -5,7 +5,7 @@
   "scripts": {
     "instagram": "node ./instagram-update.mjs",
     "serve": "npm run instagram && npx hexo serve",
-    "build": "npm run instagram && npx hexo generate"
+    "build": "npx hexo generate"
   },
   "hexo": {
     "version": "6.3.0"
