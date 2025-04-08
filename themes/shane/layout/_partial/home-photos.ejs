@@ -2,6 +2,7 @@
 <section id="photos" class="photos-section section-padding">
   <div class="container-fluid">
     <h2 class="section-title wow fadeInUp">Photos</h2>
+    <% if (site.data.instagram) { %>
     <div class="row">
       <div class="grid">
         <% for (var i=0; i < site.data.instagram.length; i++) { var item =
@@ -33,6 +34,7 @@
         <% } %>
       </div>
     </div>
+    <% } %>
     <div class="row photos-links">
       <div class="col-sm-4 col-sm-offset-4 text-center">
         <a
