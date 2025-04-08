@@ -1,47 +1,76 @@
 <article class="blog-post-wrapper archive-type-<%= post.layout %>">
-    <div class="figure">
-        <div class="post-thumbnail">        
-            <% if (post.featured_image) { %>
-            <a href="<%- url_for(post.path) %>"><img src="<%- post.featured_image %>" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>   
-            <% } else if(post.photos && post.photos.length >= 1) { %>
-            <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.photos[0].split('|')[0]) %>" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
-            <% } else { %>
-            <a href="<%- url_for(post.path) %>"><img src="/images/blog/default-post.jpg" alt="<%= post.title || '(no title)' %>" class="scale" data-scale="best-fill" data-align="center" /></a>
-            <% } %>
-        </div>
-        <span><img src="/images/SCLogo-Transparent.svg" alt=""/></span>
+  <div class="figure">
+    <div class="post-thumbnail">
+      <% if (post.featured_image) { %>
+      <a href="<%- url_for(post.path) %>"
+        ><img
+          src="<%- post.featured_image %>"
+          alt="<%= post.title || '(no title)' %>"
+          class="scale"
+          data-scale="best-fill"
+          data-align="center"
+      /></a>
+      <% } else if(post.photos && post.photos.length >= 1) { %>
+      <a href="<%- url_for(post.path) %>"
+        ><img
+          src="<%- url_for(post.photos[0].split('|')[0]) %>"
+          alt="<%= post.title || '(no title)' %>"
+          class="scale"
+          data-scale="best-fill"
+          data-align="center"
+      /></a>
+      <% } else { %>
+      <a href="<%- url_for(post.path) %>"
+        ><img
+          src="/images/blog/default-post.jpg"
+          alt="<%= post.title || '(no title)' %>"
+          class="scale"
+          data-scale="best-fill"
+          data-align="center"
+      /></a>
+      <% } %>
     </div>
-    <!-- /.figure -->
-    <header class="entry-header">
-        <div class="post-meta">
-            <span class="the-category"> 
-                <%- partial('post/tag') %>
-            </span>
-        </div>
-        <a href="<%- url_for(post.path) %>"><h3 class="entry-title"><%= post.title || '(no title)' %></h3></a>
-        <p><%- truncate(strip_html(post.content),{length: 100}) %></p>
-        <div class="entry-meta">
-            <ul class="list-inline">
-                <li>
-                    <span class="the-time">
-            <%- partial('post/date', {class_name: 'article-date', date_format: config.date_format}) %>
+    <span><img src="/images/SCLogo-Transparent.svg" alt="" /></span>
+  </div>
+  <!-- /.figure -->
+  <header class="entry-header">
+    <div class="post-meta">
+      <span class="the-category"> <%- partial('post/tag') %> </span>
+    </div>
+    <a href="<%- url_for(post.path) %>"
+      ><h3 class="entry-title"><%= post.title || '(no title)' %></h3></a
+    >
+    <p><%- truncate(strip_html(post.content),{length: 100}) %></p>
+    <div class="entry-meta">
+      <ul class="list-inline">
+        <li>
+          <span class="the-time">
+            <%- partial('post/date', {class_name: 'article-date', date_format:
+            config.date_format}) %>
           </span>
-                </li>
-                <li>
-                    <span class="the-share">
-                      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">
-                        <i class="fa-regular fa-share-from-square"></i> Share
-                      </a>
-                    </span>
-                </li>
-                <li>
-                    <span class="the-comments">
-                        <a href="<%- config.url + url_for(post.path) %>#disqus_thread" title=""></a>
-                    </span>
-                </li>
-            </ul>
-        </div>
-        <!-- .entry-meta -->
-    </header>
-    <!-- .entry-header -->
+        </li>
+        <li>
+          <span class="the-share">
+            <a
+              data-url="<%- post.permalink %>"
+              data-id="<%= post._id %>"
+              class="article-share-link"
+            >
+              <i class="fa-solid fa-share-from-square"></i> Share
+            </a>
+          </span>
+        </li>
+        <li>
+          <span class="the-comments">
+            <a
+              href="<%- config.url + url_for(post.path) %>#disqus_thread"
+              title=""
+            ></a>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <!-- .entry-meta -->
+  </header>
+  <!-- .entry-header -->
 </article>

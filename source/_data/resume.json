@@ -14,6 +14,16 @@
       ]
     },
     {
+      "start": "Jan 2025",
+      "end": "Present",
+      "company": "dsmHack",
+      "location": "Des Moines, IA",
+      "title": "Director At-Large",
+      "details": [
+        "Director at-large for dsmHack helping in organizing the annual charity hackathon helping Des Moines-area non-profits solve their technology problems because technology should never be a barrier to doing good."
+      ]
+    },
+    {
       "start": "February 2017",
       "end": "March 2019",
       "company": "Stine Seed",
@@ -129,16 +139,6 @@
       "title": "Sr. Systems Analyst/Programmer",
       "details": [
         "Designed and implemented a number of web, desktop and mobile applications to facilitate sample tracking and environmental cleanup using ASP.NET, .NET Windows Forms, C#, Oracle, SQL Server, XAML, XML, and Palm OS."
-      ]
-    },
-    {
-      "start": "Jan 2025",
-      "end": "Present",
-      "company": "dsmHack",
-      "location": "Des Moines, IA",
-      "title": "Director At-Large",
-      "details": [
-        "Director at-large for dsmHack helping in organizing the annual charity hackathon helping Des Moines-area non-profits solve their technology problems because technology should never be a barrier to doing good."
       ]
     },
     {
