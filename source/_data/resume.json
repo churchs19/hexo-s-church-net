@@ -5,9 +5,11 @@
       "end": "Present",
       "company": "Vermeer",
       "location": "Pella, IA",
-      "title": "IT Development Team Lead",
+      "title": "Senior Software Engineer - Intelligent Systems",
       "details": [
         "Supervised and mentored a team of 4 developers.",
+        "Lead a migration from on-premises source control and CI/CD to GitHub including building documentation and reusable workflows to facilitate the transition for other teams.",
+        "Served as the go-to resource for any multi-system debugging issue.",
         "Worked as a full-stack developer designing and developing applications supporting business operations at Vermeer manufacturing using technologies including Vue.js, HTML, CSS, JavaScript, C#, .NET Core, Oracle, and PostgreSQL."
       ]
     },
@@ -127,6 +129,16 @@
       "title": "Sr. Systems Analyst/Programmer",
       "details": [
         "Designed and implemented a number of web, desktop and mobile applications to facilitate sample tracking and environmental cleanup using ASP.NET, .NET Windows Forms, C#, Oracle, SQL Server, XAML, XML, and Palm OS."
+      ]
+    },
+    {
+      "start": "Jan 2025",
+      "end": "Present",
+      "company": "dsmHack",
+      "location": "Des Moines, IA",
+      "title": "Director At-Large",
+      "details": [
+        "Director at-large for dsmHack helping in organizing the annual charity hackathon helping Des Moines-area non-profits solve their technology problems because technology should never be a barrier to doing good."
       ]
     },
     {
