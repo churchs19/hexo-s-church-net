@@ -11,6 +11,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "@netlify/blobs": "^11.1.4",
     "hexo": "^6.3.0",
     "hexo-auto-canonical": "^0.1.1",
     "hexo-deployer-git": "^4.0.0",
