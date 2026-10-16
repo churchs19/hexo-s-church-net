@@ -7,7 +7,6 @@ public/
 .deploy*/
 themes/bootstrap-blog
 .vscode/
-source/amp-dist/
 # Local Netlify folder
 .netlify
 source/_data/instagram.json
