@@ -2,44 +2,63 @@ import fs from "fs";
 import moment from "moment";
 import fetch from "node-fetch";
 
-console.log(
-  `INSTAGRAM_PROXY_BASE_URL = '${process.env.INSTAGRAM_PROXY_BASE_URL}'`
-);
-console.log(`INSTAGRAM_PROXY_KEY = '${process.env.INSTAGRAM_PROXY_KEY}'`);
-console.log(`GIST_ID = '${process.env.GIST_ID}'`);
+const OUTPUT_PATH = "./source/_data/instagram.json";
+const MAX_ITEMS = 12;
+const TIMEOUT_MS = 15000;
 
-const updateInstagram = async function () {
-  const proxyUrl = `${process.env.INSTAGRAM_PROXY_BASE_URL}.netlify/functions/feed`;
+const fetchFeed = async function () {
+  const { INSTAGRAM_PROXY_BASE_URL, INSTAGRAM_PROXY_KEY, GIST_ID } =
+    process.env;
+  if (!INSTAGRAM_PROXY_BASE_URL || !INSTAGRAM_PROXY_KEY || !GIST_ID) {
+    throw new Error(
+      "INSTAGRAM_PROXY_BASE_URL, INSTAGRAM_PROXY_KEY and GIST_ID must be set",
+    );
+  }
+
+  const proxyUrl = `${INSTAGRAM_PROXY_BASE_URL}.netlify/functions/feed`;
   console.log(`Proxy URL = ${proxyUrl}`);
-  let instagramData = await fetch(proxyUrl, {
+  const response = await fetch(proxyUrl, {
     headers: {
       Accept: "application/json",
-      "x-api-key": process.env.INSTAGRAM_PROXY_KEY,
-      "x-gist-id": process.env.GIST_ID,
+      "x-api-key": INSTAGRAM_PROXY_KEY,
+      "x-gist-id": GIST_ID,
     },
-  }).then((response) => response.json());
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
 
-  instagramData = instagramData.slice(0, Math.min(instagramData.length, 12));
-  // for (var index = 0; index < instagramData.length; index++) {
-  //   try {
-  //     const item = instagramData[index];
-  //     var oembedData = await fetch(
-  //       `https://graph.facebook.com/v8.0/instagram_oembed?url=${item.permalink}&access_token=${process.env.FACEBOOK_CLIENT_KEY}&omitscript=true`
-  //     ).then((response) => {
-  //       return response.json();
-  //     });
-  //     item.embedHtml = oembedData.html;
-  //     item.timestampFormatted = moment(item.timestamp).format("lll");
-  //   } catch (e) {
-  //     console.log(e);
-  //     throw e;
-  //   }
-  // }
+  const body = await response.json().catch(() => null);
+  if (!response.ok) {
+    throw new Error(
+      `Proxy returned ${response.status}: ${body?.errorMessage ?? "no error message"}`,
+    );
+  }
+  if (!Array.isArray(body)) {
+    throw new Error("Proxy response was not an array");
+  }
+  return body.slice(0, MAX_ITEMS);
+};
 
-  fs.writeFileSync(
-    "./source/_data/instagram.json",
-    JSON.stringify(instagramData)
-  );
+const updateInstagram = async function () {
+  let instagramData;
+  try {
+    instagramData = await fetchFeed();
+  } catch (e) {
+    // Keep the last good data so a proxy outage doesn't block the site build.
+    console.warn(`Instagram update failed: ${e.message}`);
+    if (!fs.existsSync(OUTPUT_PATH)) {
+      fs.writeFileSync(OUTPUT_PATH, "[]");
+      console.warn(`Wrote empty ${OUTPUT_PATH}`);
+    } else {
+      console.warn(`Keeping existing ${OUTPUT_PATH}`);
+    }
+    return;
+  }
+
+  // Temp file + rename so a failed write can't corrupt the existing data.
+  const tempPath = `${OUTPUT_PATH}.tmp`;
+  fs.writeFileSync(tempPath, JSON.stringify(instagramData));
+  fs.renameSync(tempPath, OUTPUT_PATH);
+  console.log(`Wrote ${instagramData.length} items to ${OUTPUT_PATH}`);
 };
 
 updateInstagram();
