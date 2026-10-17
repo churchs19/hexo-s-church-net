@@ -771,6 +771,24 @@ iframe.instagram-media {
   height: 100%;
 }
 
+.photos-section figcaption a {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Clamp the caption (first <p>) so long text ends in an ellipsis */
+.photos-section figcaption a p:first-of-type {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
 .photos-section .grid {
   display: grid;
   justify-items: stretch;
