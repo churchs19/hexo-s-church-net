@@ -1,6 +1,5 @@
 import fs from "fs";
 import moment from "moment";
-import fetch from "node-fetch";
 
 const OUTPUT_PATH = "./source/_data/instagram.json";
 const MAX_ITEMS = 12;
