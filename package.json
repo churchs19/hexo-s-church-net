@@ -25,12 +25,9 @@
     "hexo-generator-tag": "^2.0.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^6.0.0",
-    "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-tag-fontawesome": "^1.1.0",
-    "js-yaml": "^4.1.0",
-    "moment": "^2.29.4",
-    "node-fetch": "^3.3.0"
+    "moment": "^2.31.0"
   },
   "allowScripts": {
     "core-js@2.6.12": true,
