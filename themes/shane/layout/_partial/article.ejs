@@ -4,9 +4,11 @@
   itemscope
   itemprop="blogPost"
 >
+  <% if (index || !post.featured_image){ %>
   <header class="article-header">
     <%- partial('post/title', {class_name: 'article-title'}) %>
   </header>
+  <% } %>
 
   <div class="article-meta">
     <% if (!hideDate) { %> <%- partial('post/date', {class_name: 'article-date',
@@ -30,13 +32,14 @@
     <% if (!(post.excerpt && index)){ %> <%- partial('post/gallery') %> <% } %>
 
     <footer class="article-footer">
-      <a
+      <button
+        type="button"
         data-url="<%- post.permalink %>"
         data-id="<%= post._id %>"
         class="article-share-link"
       >
-        <i class="fa-solid fa-share-from-square"></i> Share
-      </a>
+        <i class="fa-solid fa-share-from-square" aria-hidden="true"></i> Share
+      </button>
       <% if (post.comments && config.disqus_shortname){ %>
       <a href="#disqus_thread" class="article-comment-link">
         <i class="fa-solid fa-comments"></i> Comments

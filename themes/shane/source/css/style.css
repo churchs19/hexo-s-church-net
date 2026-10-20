@@ -89,14 +89,12 @@ a {
 
 a,
 a > * {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  outline: none;
   color: #49488e;
   text-decoration: none;
 }
@@ -269,10 +267,6 @@ h6 {
   color: #49488e;
   background-color: #fff;
   border-color: #49488e;
-}
-
-button:focus {
-  outline: none;
 }
 
 /*IMAGES*/
@@ -1836,67 +1830,6 @@ Icon for all respective meta
   }
 }
 
-/* ---------------------------------------------- /*
- * Preloader
-/* ---------------------------------------------- */
-
-#tt-preloader {
-  background: #fff;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 9999;
-}
-
-@-webkit-keyframes rotate-clockwise {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-clockwise {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-#pre-status,
-.preload-placeholder {
-  background-image: url("../images/baseball-01.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px;
-  left: 50%;
-  margin: -100px 0 0 -100px;
-  position: absolute;
-  top: 50%;
-  width: 200px;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  animation: rotate-clockwise 2s linear infinite;
-}
-
-.preload-placeholder {
-  background: none;
-  left: 0;
-  margin: 0;
-  text-align: center;
-  top: 65%;
-}
-
 /* Archives Page */
 
 .page-container {
@@ -2109,3 +2042,40 @@ Icon for all respective meta
 }
 
 /* End Post Hero Images */
+
+/* ----------------------------------------------------------
+  ACCESSIBILITY
+---------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid #49488e !important;
+  outline-offset: 2px;
+}
+
+#main:focus-visible {
+  outline: none !important;
+}
+
+.intro :focus-visible,
+.photos-section :focus-visible,
+.projects-gallery :focus-visible {
+  outline-color: #fff !important;
+}
+
+.skip-link.sr-only-focusable:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10000;
+  padding: 10px 16px;
+  background: #fff;
+  color: #49488e;
+  font-weight: 700;
+}
+
+button.article-share-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #49488e;
+}

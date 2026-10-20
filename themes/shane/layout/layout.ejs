@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= config.language %>">
 <%- partial('_partial/head') %>
 <body>
+  <a class="skip-link sr-only sr-only-focusable" href="#main">Skip to content</a>
   <div id="top"></div>
   <%- body %>
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   <!-- Scroll-up -->
   <div class="scroll-up">
-      <a href="#top"><i class="fa-solid fa-angle-up"></i></a>
+      <a href="#top" aria-label="Back to top"><i class="fa-solid fa-angle-up" aria-hidden="true"></i></a>
   </div>
   <%- partial('_partial/inline-scripts') %>
 </body>

@@ -1,29 +1,23 @@
-/*global jQuery, WOW, moment, _, instgrm */
+/*global jQuery, WOW */
 
 jQuery(function ($) {
   "use strict";
-
-  // ----------------------------------------------
-  // Preloader
-  // ----------------------------------------------
-
-  $(window).ready(function () {
-    $("#pre-status").fadeOut();
-    $("#tt-preloader").delay(350).fadeOut("slow");
-  });
 
   // -------------------------------------------------------------
   // Animated scrolling / Scroll Up
   // -------------------------------------------------------------
 
   (function () {
-    $("a[href*=#]").bind("click", function (e) {
-      var anchor = $(this);
+    $('a[href^="#"]').not(".skip-link").bind("click", function (e) {
+      var target = $(this).attr("href");
+      if (target.length < 2 || !$(target).length) {
+        return;
+      }
       $("html, body")
         .stop()
         .animate(
           {
-            scrollTop: $(anchor.attr("href")).offset().top,
+            scrollTop: $(target).offset().top,
           },
           1000
         );
@@ -204,18 +198,6 @@ jQuery(function ($) {
   //     },
   //   });
   // });
-
-  // -------------------------------------------------------------
-  // Twitter Widget Styling
-  // -------------------------------------------------------------
-  $(document).ready(function () {
-    $("#twitter iframe").waitUntilExists(function () {
-      $("#twitter iframe")
-        .contents()
-        .find("head")
-        .append("<style>.timeline-Header { display: none; }</style>");
-    });
-  });
 
   // -------------------------------------------------------------
   // Scalable Images

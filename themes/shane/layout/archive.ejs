@@ -1,6 +1,5 @@
-<%- partial('_partial/preloader') %>
 <%- partial('_partial/masthead-secondary') %>
-<div class="container page-container">
+<main id="main" tabindex="-1" class="container page-container">
     <div class="row">
         <div class="col-sm-9">
 <%
@@ -27,5 +26,4 @@
             <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
         </div>
     </div>
-</div>
-<script id="dsq-count-scr" src="//<%= config.disqus_shortname %>.disqus.com/count.js" async></script>
+</main>
