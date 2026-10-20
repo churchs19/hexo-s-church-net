@@ -1,10 +1,10 @@
 <!-- Photos Section -->
 <section id="photos" class="photos-section section-padding">
-  <div class="container-fluid">
-    <h2 class="section-title wow fadeInUp">Photos</h2>
-    <% if (site.data.instagram) { %>
-    <div class="row">
-      <div class="grid">
+  <div class="container">
+    <h2 class="section-title reveal">Photos</h2>
+  </div>
+  <% if (site.data.instagram) { %>
+  <div class="photo-grid">
         <% for (var i=0; i < site.data.instagram.length; i++) { var item =
         site.data.instagram[i]; %>
         <figure class="photo-item">
@@ -32,22 +32,15 @@
           </figcaption>
         </figure>
         <% } %>
-      </div>
-    </div>
-    <% } %>
-    <div class="row photos-links">
-      <div class="col-sm-4 col-sm-offset-4 text-center">
-        <a
-          class="btn btn-primary btn-lg"
-          href="https://www.instagram.com/churchs19/"
-          target="_blank"
-          ><i class="fa-brands fa-instagram"></i>View More on Instagram</a
-        ><br />
-        <!--<a href="http://wwwazure.s-church.net/PhotoAlbum" target="_blank"
-          ><i class="fa-solid fa-image"></i>Photo Archive</a
-        >-->
-      </div>
-    </div>
+  </div>
+  <% } %>
+  <div class="photos-links">
+    <a
+      class="btn btn-primary btn-lg"
+      href="https://www.instagram.com/churchs19/"
+      target="_blank"
+      ><i class="fa-brands fa-instagram" aria-hidden="true"></i>View More on Instagram</a
+    >
   </div>
 </section>
 <!-- End Photos Section -->

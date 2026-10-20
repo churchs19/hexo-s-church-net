@@ -5,7 +5,7 @@ var renderPosition = function (item, idx) {
   var html = (idx % 2 === 0) ? '<li class="timeline">' : '<li class="timeline-inverted">';
   html += '<div class="posted-date"><span class="month">' + escape_html(item.start) +
     '<br/>&mdash;<br/>' + escape_html(item.end) + '</span></div>';
-  html += '<div class="timeline-panel wow fadeInUp"><div class="timeline-content">';
+  html += '<div class="timeline-panel reveal"><div class="timeline-content">';
   html += '<div class="timeline-heading"><h3>' + escape_html(item.title) + '</h3>';
   html += '<span>' + escape_html(item.company) + ' - ' + escape_html(item.location) + '</span></div>';
   html += '<div class="timeline-body"><ul>';
@@ -18,11 +18,10 @@ var renderPosition = function (item, idx) {
 %>
 <section id="resume" class="resume-section section-padding">
   <div class="container">
-    <h2 class="section-title wow fadeInUp">Resume</h2>
+    <h2 class="section-title reveal">Resume</h2>
     <% for (category in site.data.resume) { %>
     <% var positions = site.data.resume[category]; %>
-    <div class="row">
-      <div class="col-md-12">
+    <div class="resume-group">
         <div class="resume-title">
           <h3><%= category %></h3>
         </div>
@@ -43,16 +42,11 @@ var renderPosition = function (item, idx) {
           </details>
           <% } %>
         </div>
-      </div>
     </div>
-    <!-- /row -->
     <% } %>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 download-button">
+    <div class="download-button resume-download">
             <a class="btn btn-primary btn-lg btn-block" data-event-category="Download" data-event-action="resume" href="/resume.pdf" target="_blank"><i class="fa-solid fa-download" aria-hidden="true"></i>Download my resume</a>
-        </div>
     </div>
   </div>
-  <!-- /.container -->
 </section>
 <!-- End Resume Section -->

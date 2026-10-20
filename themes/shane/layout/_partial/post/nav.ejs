@@ -1,20 +1,16 @@
 <% if (post.prev || post.next){ %>
-<ul id="article-nav" class="nav nav-pills clearfix">
+<nav id="article-nav" class="article-nav" aria-label="More posts">
   <% if (post.next){ %>
-  <li role="presentation" class="pull-left">
-    <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa-solid fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title"><%= post.next.title || '(no title)' %></span>
-    </a>
-  </li>
+  <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap article-nav-older">
+    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+    <span class="article-nav-link-title"><%= post.next.title || '(no title)' %></span>
+  </a>
   <% } %>
   <% if (post.prev){ %>
-  <li role="presentation" class="pull-right">
-    <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title"><%= post.prev.title || '(no title)' %></span>
-      <i class="fa-solid fa-chevron-right pull-right"></i>
-    </a>
-  </li>
+  <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap article-nav-newer">
+    <span class="article-nav-link-title"><%= post.prev.title || '(no title)' %></span>
+    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+  </a>
   <% } %>
-</ul>
+</nav>
 <% } %>

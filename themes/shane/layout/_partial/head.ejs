@@ -19,6 +19,7 @@
     %>
     <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add('js');</script>
     <%- open_graph({twitter_id: theme.twitter_id, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
     <% if (theme.rss){ %>
       <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
@@ -27,38 +28,21 @@
       <link rel="shortcut icon" href="<%- theme.favicon %>">
     <% } %>
     <% if (config.highlight.enable){ %>
-      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <% } %>		
     <% if (theme.mastodon) { %>
       <link href="<%- theme.mastodon %>" rel="me">
     <% } %>
 		<%- autoCanonical(config, page) %>
 		
-    <!-- Bootstrap core CSS -->
-    <%- css('bootstrap/css/bootstrap.min') %>
     <!-- Font Awesome CSS -->
     <%- css('css/fontawesome.min') %>
     <%- css('css/brands.min') %>
     <%- css('css/solid.min') %>
-    <!-- Flickity -->
-    <%- css('css/flickity.css') %>
-    <!-- Animate css -->
-    <%- css('css/animate') %> 
-<% if (theme.fancybox){ %>
-      <!-- Fancybox -->
-    <%- css('fancybox/jquery.fancybox') %>
-<% } %>
-    <!-- Custom styles CSS -->
-    <%- css('css/style.css') %>
-    <!-- Responsive CSS -->
-    <%- css('css/responsive.css') %>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <% if (is_home()){ %>
+    <%- css('css/flickity.min') %>
+    <% } %>
+    <%- css('css/main') %>
 
     <%- partial('structured-data', { post: page }) %>
     <%- partial('google-analytics') %>

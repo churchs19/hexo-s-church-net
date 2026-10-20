@@ -1,25 +1,10 @@
-<%- partial('_partial/masthead-secondary') %>
-
-<% if (page.featured_image){ %>
-<div class="intro-container tt-fullHeight tt-fullHeight-feature" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2" style="background-image: url(<%- page.featured_image %>);">
-    <div class="intro-mask"></div>
-    <div class="intro">
-        <header class="article-header">
-            <%- partial('_partial/post/title', {post: page, index: false, class_name: 'article-title'}) %>
-        </header>
-    </div>
-  <div class="mouse-icon">
-    <div class="wheel"></div>
-  </div>    
-</div>
-<% } %>
-<main id="main" tabindex="-1" class="container page-container">
-    <div class="row">
-        <div class="col-sm-9">
-            <%- partial('_partial/article', {post: page, index: false, hideDate: false}) %>
-        </div>
-        <div class="col-sm-3 blog-sidebar">
-            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        </div>
-    </div>
+<%- partial('_partial/nav') %>
+<%- partial('_partial/feature-hero') %>
+<main id="main" tabindex="-1" class="container page-container with-sidebar">
+  <div class="page-content">
+    <%- partial('_partial/article', {post: page, index: false, hideDate: false}) %>
+  </div>
+  <aside class="blog-sidebar">
+    <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+  </aside>
 </main>

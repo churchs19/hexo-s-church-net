@@ -1,0 +1,13 @@
+<% if (page.featured_image){ %>
+<div class="intro-container hero-feature" data-parallax style="background-image: url(<%- page.featured_image %>);">
+  <div class="intro-mask"></div>
+  <div class="intro">
+    <header class="article-header">
+      <%- partial('_partial/post/title', {post: page, index: false, class_name: 'article-title'}) %>
+    </header>
+  </div>
+  <div class="mouse-icon" aria-hidden="true">
+    <div class="wheel"></div>
+  </div>
+</div>
+<% } %>

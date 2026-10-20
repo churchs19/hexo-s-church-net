@@ -14,17 +14,8 @@
 </script>
 <% } %>
 
-<%- js('js/jquery') %>
-<%- js('bootstrap/js/bootstrap.min') %>
+<% if (is_home()){ %>
 <%- js('js/flickity.pkgd.min') %>
-<%- js('js/jquery.stellar.min') %>
-<%- js('js/jquery.sticky') %>
-<%- js('js/wow.min') %>
-<%- js('js/jquery.lazyload.min') %>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-<% if (theme.fancybox){ %>
-  <%- js('fancybox/jquery.fancybox.pack') %>
 <% } %>
-
 <%- js('js/scripts') %>

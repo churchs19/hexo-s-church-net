@@ -41,7 +41,7 @@ function bsPaginatorHelper(options){
       result += '<li><a class="page-prev" rel="prev" ' +
               'href="' + link(current - 1) + '">' + prevText + '</a></li>';
     } else {
-      result += '<li class="disabled"><span class="page-prev">' + prevText + '</a></li>';
+      result += '<li class="disabled"><span class="page-prev">' + prevText + '</span></li>';
     }
   }
 
@@ -110,11 +110,11 @@ function bsPaginatorHelper(options){
       result += '<li><a class="page-next" rel="next" ' +
               'href="' + link(current + 1) + '">' + nextText + '</a></li>';
     } else {
-      result += '<li class="disabled"><span class="page-next">' + nextText + '</a></li>';
+      result += '<li class="disabled"><span class="page-next">' + nextText + '</span></li>';
     }
   }
 
-  return '<nav><ul class="pagination">' + result + '</ul></nav>';
+  return '<nav aria-label="Pagination"><ul class="pagination">' + result + '</ul></nav>';
 }
 
 hexo.extend.helper.register('bs_paginator', bsPaginatorHelper);

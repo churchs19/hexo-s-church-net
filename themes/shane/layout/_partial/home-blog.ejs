@@ -1,23 +1,17 @@
 <!-- Blog Section -->
 <section id="blog" class="latest-blog-section section-padding">
-    <div class="container">
-        <h2 class="section-title wow fadeInUp">Blog</h2>
-
-        <!--        <div class="flex-container">-->
-        <div class="row">
-            <% if (site.posts.length){ %>
-                <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
-                    <div class="col-md-4">
-                        <%- partial('_partial/archive-post', {post: post, index: true}) %>
-                    </div>
-                <% }) %>
-            <% } %>
-        </div>
-        <div class="blog-more text-center">
-            <a href="/<%- config.archive_dir %>/" class="btn btn-primary">View More</a>
-        </div>
-
+  <div class="container">
+    <h2 class="section-title reveal">Blog</h2>
+    <% if (site.posts.length){ %>
+    <div class="post-grid">
+      <% site.posts.sort('date', -1).limit(3).each(function(post){ %>
+      <%- partial('_partial/archive-post', {post: post, index: true}) %>
+      <% }) %>
     </div>
-    <!-- /.container -->
+    <% } %>
+    <div class="blog-more">
+      <a href="<%- url_for(config.archive_dir + '/') %>" class="btn btn-primary">View More</a>
+    </div>
+  </div>
 </section>
 <!-- End Blog Section -->

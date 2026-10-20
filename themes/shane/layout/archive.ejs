@@ -1,7 +1,6 @@
-<%- partial('_partial/masthead-secondary') %>
-<main id="main" tabindex="-1" class="container page-container">
-    <div class="row">
-        <div class="col-sm-9">
+<%- partial('_partial/nav') %>
+<main id="main" tabindex="-1" class="container page-container with-sidebar">
+  <div class="page-content">
 <%
     var title = page.title;
 
@@ -19,11 +18,10 @@
       title = 'Tag: ' + page.tag;
     }
 %>
-            <h2 class="section-title wow fadeInUp"><% if (title){ %><%= title %><% } else { %><%= config.title %><% } %></h2>
-            <%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
-        </div>
-        <div class="col-sm-3 blog-sidebar">
-            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        </div>
-    </div>
+    <h2 class="section-title reveal"><% if (title){ %><%= title %><% } else { %><%= config.title %><% } %></h2>
+    <%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
+  </div>
+  <aside class="blog-sidebar">
+    <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+  </aside>
 </main>

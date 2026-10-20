@@ -1,249 +1,331 @@
-/*global jQuery, WOW */
-
-jQuery(function ($) {
+(function () {
   "use strict";
 
   var reduceMotion =
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  var $ = function (selector, root) {
+    return (root || document).querySelector(selector);
+  };
+  var $$ = function (selector, root) {
+    return Array.prototype.slice.call(
+      (root || document).querySelectorAll(selector)
+    );
+  };
+
+  var header = $(".site-header");
+  var navToggle = $(".nav-toggle");
+
   // -------------------------------------------------------------
-  // Animated scrolling / Scroll Up
+  // Navigation: mobile menu and submenus
   // -------------------------------------------------------------
 
-  (function () {
-    $('a[href^="#"]').not(".skip-link").bind("click", function (e) {
-      var target = $(this).attr("href");
-      if (target.length < 2 || !$(target).length) {
-        return;
-      }
-      $("html, body")
-        .stop()
-        .animate(
-          {
-            scrollTop: $(target).offset().top,
-          },
-          reduceMotion ? 0 : 1000
-        );
+  var closeMenu = function () {
+    if (!header) return;
+    header.classList.remove("nav-open");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+  };
+
+  var closeSubmenus = function (except) {
+    $$(".has-submenu.open").forEach(function (item) {
+      if (item === except) return;
+      item.classList.remove("open");
+      $(".submenu-toggle", item).setAttribute("aria-expanded", "false");
+    });
+  };
+
+  if (navToggle) {
+    navToggle.addEventListener("click", function () {
+      var open = header.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  $$(".submenu-toggle").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var item = button.closest(".has-submenu");
+      var open = item.classList.toggle("open");
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      closeSubmenus(item);
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".has-submenu")) closeSubmenus();
+  });
+
+  // -------------------------------------------------------------
+  // Same-page anchors: smooth scroll and close the mobile menu
+  // -------------------------------------------------------------
+
+  $$('a[href^="#"]').forEach(function (link) {
+    if (link.classList.contains("skip-link")) return;
+    link.addEventListener("click", function (e) {
+      var id = link.getAttribute("href");
+      if (id.length < 2) return;
+      var target = document.getElementById(id.slice(1));
+      if (!target) return;
       e.preventDefault();
+      closeMenu();
+      closeSubmenus();
+      target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+      if (history.pushState) history.pushState(null, "", id);
     });
-  })();
+  });
 
   // -------------------------------------------------------------
-  // Full Screen Slider
+  // Scrollspy: highlight the nav item for the section in view
   // -------------------------------------------------------------
-  (function () {
-    var resizeContainer = function () {
-      $(".tt-fullHeight").each(function () {
-        if ($(this).hasClass("tt-fullHeight-feature")) {
-          $(this).height($(window).height() - $("header.header").height());
+
+  var spyLinks = $$('.nav-item > a[href^="#"]');
+  if (spyLinks.length && "IntersectionObserver" in window) {
+    var linkFor = {};
+    spyLinks.forEach(function (link) {
+      linkFor[link.getAttribute("href").slice(1)] = link;
+    });
+    var setActive = function (id) {
+      spyLinks.forEach(function (link) {
+        var active = link === linkFor[id];
+        link.parentNode.classList.toggle("active", active);
+        if (active) {
+          link.setAttribute("aria-current", "true");
         } else {
-          $(this).height($(window).height());
+          link.removeAttribute("aria-current");
         }
       });
     };
-
-    resizeContainer();
-
-    $(window).resize(resizeContainer);
-  })();
-
-  // -------------------------------------------------------------
-  // Sticky Menu
-  // -------------------------------------------------------------
-
-  (function () {
-    $(".header").sticky({
-      topSpacing: 0,
-    });
-
-    $("body").scrollspy({
-      target: ".navbar-custom",
-      offset: 70,
-    });
-  })();
-
-  // -------------------------------------------------------------
-  // Back To Top
-  // -------------------------------------------------------------
-
-  (function () {
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-        $(".scroll-up").fadeIn();
-      } else {
-        $(".scroll-up").fadeOut();
-      }
-    });
-  })();
-
-  // -------------------------------------------------------------
-  // SHARE LINKS
-  // -------------------------------------------------------------
-  $(document).ready(function () {
-    var shareNetworks = [
-      ["Bluesky", "fa-bluesky", function (url, title) {
-        return "https://bsky.app/intent/compose?text=" + encodeURIComponent(title + " " + url);
-      }],
-      ["LinkedIn", "fa-linkedin", function (url) {
-        return "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
-      }],
-      ["Facebook", "fa-facebook", function (url) {
-        return "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(url);
-      }],
-    ];
-
-    var closeShareBoxes = function () {
-      $(".article-share-box.on").removeClass("on");
-      $(".article-share-link[aria-expanded=true]").attr("aria-expanded", "false");
-    };
-
-    var buildShareBox = function (id, url, title) {
-      var box = $('<div class="article-share-box" role="dialog" aria-label="Share this post"></div>')
-        .attr("id", id)
-        .attr("data-url", url);
-      var links = $('<div class="article-share-links"></div>');
-
-      shareNetworks.forEach(function (network) {
-        links.append(
-          $('<a class="article-share-network" target="_blank" rel="noopener"></a>')
-            .attr({
-              href: network[2](url, title),
-              title: network[0],
-              "aria-label": "Share on " + network[0],
-            })
-            .append('<i class="fa-brands ' + network[1] + '" aria-hidden="true"></i>')
-        );
-      });
-      links.append(
-        '<button type="button" class="article-share-copy">' +
-          '<i class="fa-solid fa-link" aria-hidden="true"></i> <span>Copy link</span>' +
-          "</button>"
-      );
-
-      return box.append(links).appendTo("body");
-    };
-
-    $("body")
-      .on("click", closeShareBoxes)
-      .on("keydown", function (e) {
-        if (e.key === "Escape") {
-          var opener = $(".article-share-link[aria-expanded=true]");
-          closeShareBoxes();
-          opener.focus();
-        }
-      })
-      .on("click", ".article-share-link", function (e) {
-        e.stopPropagation();
-
-        var $this = $(this),
-          url = $this.attr("data-url"),
-          title = $this.attr("data-title") || document.title,
-          id = "article-share-box-" + $this.attr("data-id"),
-          box = $("#" + id);
-
-        if (navigator.share) {
-          navigator.share({ title: title, url: url }).catch(function () {});
-          return;
-        }
-
-        if (box.hasClass("on")) {
-          closeShareBoxes();
-          return;
-        }
-        closeShareBoxes();
-
-        if (!box.length) {
-          box = buildShareBox(id, url, title);
-        }
-
-        var offset = $this.offset();
-        box.addClass("on").css({
-          top: offset.top + $this.outerHeight() + 6,
-          left: Math.max(
-            8,
-            Math.min(offset.left, $(window).width() - box.outerWidth() - 8)
-          ),
+    var spy = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActive(entry.target.id);
         });
-        $this.attr({ "aria-expanded": "true", "aria-controls": id });
-        box.find("a, button").first().focus();
-      })
-      .on("click", ".article-share-box", function (e) {
-        e.stopPropagation();
-      })
-      .on("click", ".article-share-copy", function () {
-        var $button = $(this),
-          url = $button.closest(".article-share-box").attr("data-url"),
-          done = function () {
-            $button.find("span").text("Copied!");
-            setTimeout(function () {
-              $button.find("span").text("Copy link");
-            }, 2000);
-          };
+      },
+      { rootMargin: "-70px 0px -60% 0px" }
+    );
+    Object.keys(linkFor).forEach(function (id) {
+      var section = document.getElementById(id);
+      if (section) spy.observe(section);
+    });
+  }
 
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(url).then(done, function () {
-            window.prompt("Copy this link:", url);
-          });
-        } else {
-          window.prompt("Copy this link:", url);
+  // -------------------------------------------------------------
+  // Back to top button
+  // -------------------------------------------------------------
+
+  var scrollUp = $(".scroll-up");
+  var onScroll = function () {
+    if (scrollUp) scrollUp.classList.toggle("visible", window.scrollY > 100);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // -------------------------------------------------------------
+  // Parallax hero backgrounds (desktop pointer devices only)
+  // -------------------------------------------------------------
+
+  var parallax = $$("[data-parallax]");
+  var canParallax =
+    parallax.length &&
+    !reduceMotion &&
+    window.matchMedia("(hover: hover) and (min-width: 768px)").matches;
+
+  if (canParallax) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      parallax.forEach(function (el) {
+        // The background is fixed to the viewport; move it up at 20% of the
+        // scroll speed so it lags behind the content.
+        var offset = (window.scrollY - el.offsetTop) * 0.2;
+        el.style.backgroundPosition = "center calc(50% - " + offset + "px)";
+      });
+    };
+    parallax.forEach(function (el) {
+      el.style.backgroundAttachment = "fixed";
+    });
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(update);
         }
-      });
-  });
+      },
+      { passive: true }
+    );
+    update();
+  }
 
   // -------------------------------------------------------------
-  // STELLAR FOR BACKGROUND SCROLLING
+  // Reveal sections as they scroll into view
   // -------------------------------------------------------------
 
-  $(window).load(function () {
-    if (
-      !reduceMotion &&
-      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
-      $.stellar({
-        horizontalScrolling: false,
-        responsive: true,
-      });
-    }
-  });
-
-  // -------------------------------------------------------------
-  // WOW JS
-  // -------------------------------------------------------------
-
-  (function () {
-    if (reduceMotion) {
-      return;
-    }
-    new WOW({
-      mobile: false,
-    }).init();
-  })();
+  var reveals = $$(".reveal");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  } else {
+    var revealer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px" }
+    );
+    reveals.forEach(function (el) {
+      revealer.observe(el);
+    });
+  }
 
   // -------------------------------------------------------------
   // Projects carousel button labels
   // -------------------------------------------------------------
-  $(window).load(function () {
-    $(".flickity-prev-next-button.previous").attr("aria-label", "Previous project");
-    $(".flickity-prev-next-button.next").attr("aria-label", "Next project");
+
+  window.addEventListener("load", function () {
+    var prev = $(".projects-gallery .flickity-prev-next-button.previous");
+    var next = $(".projects-gallery .flickity-prev-next-button.next");
+    if (prev) prev.setAttribute("aria-label", "Previous project");
+    if (next) next.setAttribute("aria-label", "Next project");
   });
 
   // -------------------------------------------------------------
-  //  Instagram Feed
+  // Share links
   // -------------------------------------------------------------
-  // https://api.instagram.com/v1/users/1511680150/media/recent?client_id=b6f5ef5726a74224b8dbc213f1f64432
-  // $(document).ready(function () {
-  //   $().fancybox({
-  //     selector: '[data-fancybox="gallery"]',
-  //     onActivate: function () {
-  //       instgrm.Embeds.process();
-  //     },
-  //   });
-  // });
 
-  $(document).ready(function () {
-    $("img.lazy").lazyload({ effect: "fadeIn", threshold: 200 });
+  var shareNetworks = [
+    ["Bluesky", "fa-bluesky", function (url, title) {
+      return "https://bsky.app/intent/compose?text=" + encodeURIComponent(title + " " + url);
+    }],
+    ["LinkedIn", "fa-linkedin", function (url) {
+      return "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+    }],
+    ["Facebook", "fa-facebook", function (url) {
+      return "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(url);
+    }],
+  ];
+
+  var closeShareBoxes = function () {
+    $$(".article-share-box.on").forEach(function (box) {
+      box.classList.remove("on");
+    });
+    $$('.article-share-link[aria-expanded="true"]').forEach(function (link) {
+      link.setAttribute("aria-expanded", "false");
+    });
+  };
+
+  var buildShareBox = function (id, url, title) {
+    var box = document.createElement("div");
+    box.className = "article-share-box";
+    box.id = id;
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", "Share this post");
+    box.setAttribute("data-url", url);
+
+    var links = document.createElement("div");
+    links.className = "article-share-links";
+
+    shareNetworks.forEach(function (network) {
+      var a = document.createElement("a");
+      a.className = "article-share-network";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.href = network[2](url, title);
+      a.title = network[0];
+      a.setAttribute("aria-label", "Share on " + network[0]);
+      a.innerHTML = '<i class="fa-brands ' + network[1] + '" aria-hidden="true"></i>';
+      links.appendChild(a);
+    });
+
+    var copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "article-share-copy";
+    copy.innerHTML =
+      '<i class="fa-solid fa-link" aria-hidden="true"></i> <span>Copy link</span>';
+    links.appendChild(copy);
+
+    box.appendChild(links);
+    document.body.appendChild(box);
+    return box;
+  };
+
+  document.addEventListener("click", function (e) {
+    var trigger = e.target.closest(".article-share-link");
+    var copy = e.target.closest(".article-share-copy");
+
+    if (copy) {
+      var url = copy.closest(".article-share-box").getAttribute("data-url");
+      var label = $("span", copy);
+      var done = function () {
+        label.textContent = "Copied!";
+        setTimeout(function () {
+          label.textContent = "Copy link";
+        }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, function () {
+          window.prompt("Copy this link:", url);
+        });
+      } else {
+        window.prompt("Copy this link:", url);
+      }
+      return;
+    }
+
+    if (!trigger) {
+      if (!e.target.closest(".article-share-box")) closeShareBoxes();
+      return;
+    }
+
+    var shareUrl = trigger.getAttribute("data-url");
+    var title = trigger.getAttribute("data-title") || document.title;
+    var id = "article-share-box-" + trigger.getAttribute("data-id");
+    var box = document.getElementById(id);
+
+    if (navigator.share) {
+      navigator.share({ title: title, url: shareUrl }).catch(function () {});
+      return;
+    }
+
+    if (box && box.classList.contains("on")) {
+      closeShareBoxes();
+      return;
+    }
+    closeShareBoxes();
+
+    if (!box) box = buildShareBox(id, shareUrl, title);
+
+    var rect = trigger.getBoundingClientRect();
+    box.classList.add("on");
+    box.style.top = rect.bottom + window.scrollY + 6 + "px";
+    box.style.left =
+      Math.max(
+        8,
+        Math.min(
+          rect.left + window.scrollX,
+          document.documentElement.clientWidth - box.offsetWidth - 8
+        )
+      ) + "px";
+    trigger.setAttribute("aria-expanded", "true");
+    trigger.setAttribute("aria-controls", id);
+    $("a, button", box).focus();
   });
-});
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var opener = $('.article-share-link[aria-expanded="true"]');
+    closeShareBoxes();
+    if (opener) opener.focus();
+    closeSubmenus();
+    if (header && header.classList.contains("nav-open")) {
+      closeMenu();
+      navToggle.focus();
+    }
+  });
+})();

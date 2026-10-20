@@ -3,9 +3,49 @@ navbar_brand: /images/logo.png
 rss: /atom.xml
 mastodon: https://masto.ai/@shaneschurch
 
+# Navigation
+# anchor: section id on the home page. On other pages the link becomes /#anchor,
+# unless url is set. children render as a submenu.
+menu:
+  - name: Home
+    anchor: home
+  - name: About
+    anchor: about
+  - name: Photos
+    anchor: photos
+  - name: Projects
+    anchor: projects
+    children:
+      - name: All Projects
+        anchor: projects
+      - name: GitHub
+        url: https://github.com/churchs19
+        external: true
+      - name: Fully Feedly
+        url: https://github.com/churchs19/fullyfeedly
+        external: true
+      - name: Lego MoveHub Remote
+        url: https://github.com/churchs19/lego-movehub-remote
+        external: true
+      - name: My Dinner Delights
+        url: https://www.mydinnerdelights.com
+        external: true
+      - divider: true
+      - name: Older Projects
+        url: /OlderProjects/
+  - name: Resume
+    anchor: resume
+  - name: Blog
+    anchor: blog
+    url: /blog/
+  - name: Hire Me
+    anchor: hire-me
+    hire_only: true
+  - name: Contact
+    anchor: contact
+
 # Content
 excerpt_link: Read More
-fancybox: true
 
 # Sidebar
 widgets:

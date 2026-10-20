@@ -1,0 +1,73 @@
+<%
+// Section anchors scroll in place on the home page; elsewhere they link back to it.
+var onHome = is_home();
+var hrefFor = function (item) {
+  if (item.anchor && onHome) return '#' + item.anchor;
+  if (item.url) return url_for(item.url);
+  return url_for('/') + '#' + item.anchor;
+};
+var visible = function (item) {
+  return !item.hire_only || config.hire;
+};
+var externalIcon = '&nbsp;<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>';
+%>
+<header class="site-header">
+  <nav class="site-nav container" aria-label="Main">
+    <% if (theme.navbar_brand){ %>
+    <a class="site-brand" href="<%- url_for('/') %>" title="<%= config.title %>"
+      ><img src="<%- theme.navbar_brand %>" alt="<%= config.title %>" width="31" height="43"
+    /></a>
+    <% } %>
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-menu" id="site-menu">
+      <% theme.menu.filter(visible).forEach(function (item, i) { %>
+      <% if (item.children) { %>
+      <li class="nav-item has-submenu">
+        <a href="<%- hrefFor(item) %>"><%= item.name %></a>
+        <button
+          type="button"
+          class="submenu-toggle"
+          aria-expanded="false"
+          aria-controls="submenu-<%= i %>"
+        >
+          <span class="sr-only"><%= item.name %> menu</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="submenu" id="submenu-<%= i %>">
+          <% item.children.forEach(function (child) { %>
+          <% if (child.divider) { %>
+          <li class="submenu-divider" role="separator"></li>
+          <% } else { %>
+          <li>
+            <a href="<%- hrefFor(child) %>"<% if (child.external) { %> target="_blank" rel="noopener"<% } %>
+              ><%= child.name %><% if (child.external) { %><%- externalIcon %><% } %></a
+            >
+          </li>
+          <% } %>
+          <% }) %>
+        </ul>
+      </li>
+      <% } else { %>
+      <li class="nav-item"><a href="<%- hrefFor(item) %>"><%= item.name %></a></li>
+      <% } %>
+      <% }) %>
+      <% if (theme.rss){ %>
+      <li class="nav-item">
+        <a href="<%- theme.rss %>" title="RSS Feed" aria-label="RSS Feed"
+          ><i class="fa-solid fa-rss" aria-hidden="true"></i
+        ></a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
