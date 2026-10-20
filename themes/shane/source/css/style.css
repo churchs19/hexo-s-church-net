@@ -1421,7 +1421,7 @@ Resume Timeline
 }
 
 .gallery-cell.older-projects {
-  background: url("../../images/older-projects-home-bg.jpg") no-repeat center
+  background: url("../../images/older-projects-home-bg.jpg") no-repeat right
     center;
   background-size: cover;
 }
