@@ -3,6 +3,10 @@
 jQuery(function ($) {
   "use strict";
 
+  var reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // -------------------------------------------------------------
   // Animated scrolling / Scroll Up
   // -------------------------------------------------------------
@@ -19,7 +23,7 @@ jQuery(function ($) {
           {
             scrollTop: $(target).offset().top,
           },
-          1000
+          reduceMotion ? 0 : 1000
         );
       e.preventDefault();
     });
@@ -165,6 +169,7 @@ jQuery(function ($) {
 
   $(window).load(function () {
     if (
+      !reduceMotion &&
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
@@ -181,10 +186,21 @@ jQuery(function ($) {
   // -------------------------------------------------------------
 
   (function () {
+    if (reduceMotion) {
+      return;
+    }
     new WOW({
       mobile: false,
     }).init();
   })();
+
+  // -------------------------------------------------------------
+  // Projects carousel button labels
+  // -------------------------------------------------------------
+  $(window).load(function () {
+    $(".flickity-prev-next-button.previous").attr("aria-label", "Previous project");
+    $(".flickity-prev-next-button.next").attr("aria-label", "Next project");
+  });
 
   // -------------------------------------------------------------
   //  Instagram Feed
@@ -198,16 +214,6 @@ jQuery(function ($) {
   //     },
   //   });
   // });
-
-  // -------------------------------------------------------------
-  // Scalable Images
-  // -------------------------------------------------------------
-  $(document).ready(function () {
-    $("img.scale").imageScale();
-    $(window).resize(function () {
-      $("img.scale").imageScale();
-    });
-  });
 
   $(document).ready(function () {
     $("img.lazy").lazyload({ effect: "fadeIn", threshold: 200 });

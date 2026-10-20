@@ -59,7 +59,7 @@ body {
   font-family: "robotoregular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 28px;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   color: #2a2a2f;
   background-color: #fff;
   -webkit-font-smoothing: antialiased !important;
@@ -452,7 +452,11 @@ SOCIAL ICON
   text-shadow: none;
 }
 
+.social-icons a {
+  display: inline-block;
+}
 .social-icons a i {
+  display: inline-block;
   position: relative;
   color: #fff;
   font-size: 18px;
@@ -488,6 +492,8 @@ SOCIAL ICON
   transition: all 300ms;
 }
 
+.social-icons a:hover i::after,
+.social-icons a:focus-visible i::after,
 .social-icons a i:hover::after {
   background: #49488e;
   border: 1px solid transparent;
@@ -738,7 +744,7 @@ iframe.instagram-media {
 }
 
 .photos-section figure:hover figcaption,
-.photos-section figure:focus figcaption {
+.photos-section figure:focus-within figcaption {
   opacity: 1;
 }
 
@@ -821,7 +827,7 @@ iframe.instagram-media {
 }
 
 .photos-section .photo-item:hover img,
-.photos .photo-item:focus img {
+.photos-section .photo-item:focus-within img {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -829,6 +835,41 @@ iframe.instagram-media {
 
 .instagram-embed {
   display: none;
+}
+
+/* Touch devices have no hover, so keep a one-line caption visible */
+@media (hover: none) {
+  .photos-section figcaption {
+    top: auto;
+    bottom: 0;
+    height: auto;
+    opacity: 1;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  }
+
+  .photos-section figcaption a {
+    padding: 24px 8px 8px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .photos-section figcaption i,
+  .photos-section figcaption a p:last-of-type {
+    display: none;
+  }
+
+  .photos-section figcaption a p:first-of-type {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    font-size: 12px;
+    text-transform: none;
+  }
+
+  .photos-section .photo-item a::after {
+    content: "";
+    position: absolute;
+    inset: -100vh 0 0 0;
+  }
 }
 
 .photos-section .photos-links {
@@ -1011,7 +1052,7 @@ Resume Timeline
 
 .timeline-body ul {
   list-style: disc;
-  text-align: justify;
+  text-align: left;
   font-size: 0.95em;
 }
 
@@ -1341,6 +1382,21 @@ Resume Timeline
   height: 505px;
 }
 
+.projects-gallery .gallery-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(30, 29, 64, 0.8);
+}
+
+.projects-gallery .gallery-cell > .container {
+  position: relative;
+  z-index: 1;
+}
+
 .gallery-cell span,
 .gallery-cell a {
   margin-right: 20px;
@@ -1483,6 +1539,9 @@ Resume Timeline
 }
 
 .post-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.8;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
@@ -2078,4 +2137,74 @@ button.article-share-link {
   border: 0;
   background: none;
   color: #49488e;
+}
+
+.article-tag-list-link {
+  display: inline-block;
+  padding: 4px 2px;
+}
+
+@media (max-width: 766px) {
+  /* Swipe or use the page dots on phones; the arrows cover slide content */
+  .projects-gallery .flickity-prev-next-button {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .mouse-icon {
+    display: none;
+  }
+}
+
+/* Resume: older roles live in a native disclosure */
+.resume-more {
+  margin-bottom: 40px;
+}
+
+.resume-more > summary {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 40px;
+  padding: 10px 24px;
+  border: 1px solid #49488e;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  color: #49488e;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.resume-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.resume-more > summary::after {
+  content: " \25BE";
+}
+
+.resume-more[open] > summary::after {
+  content: " \25B4";
+}
+
+.resume-more > summary:hover {
+  background: #49488e;
+  color: #fff;
 }

@@ -9,9 +9,9 @@
         site.data.instagram[i]; %>
         <figure class="photo-item">
           <% if (item.thumbnail_url) { %>
-          <img src="<%= item.thumbnail_url %>" alt="<%= item.caption %>" />
+          <img src="<%= item.thumbnail_url %>" alt="" loading="lazy" decoding="async" />
           <% } else { %>
-          <img src="<%= item.media_url %>" alt="<%= item.caption %>" />
+          <img src="<%= item.media_url %>" alt="" loading="lazy" decoding="async" />
           <% } %>
           <figcaption>
             <div class="caption-content">
@@ -21,9 +21,9 @@
                 target="_blank"
               >
                 <% if (item.media_type === "VIDEO") { %>
-                <i class="fa-solid fa-video"></i>
+                <i class="fa-solid fa-video" aria-hidden="true"></i>
                 <% } else { %>
-                <i class="fa-solid fa-image"></i>
+                <i class="fa-solid fa-image" aria-hidden="true"></i>
                 <% } %>
                 <p><%= item.caption %></p>
                 <p><%= date(item.timestamp, "lll") %></p></a

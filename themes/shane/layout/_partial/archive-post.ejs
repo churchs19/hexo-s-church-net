@@ -1,34 +1,21 @@
 <article class="blog-post-wrapper archive-type-<%= post.layout %>">
   <div class="figure">
+    <%
+    var thumbnail = '/images/blog/default-post.jpg';
+    if (post.featured_image) {
+      thumbnail = thumbnail_url(post.featured_image);
+    } else if (post.photos && post.photos.length >= 1) {
+      thumbnail = thumbnail_url(url_for(post.photos[0].split('|')[0]));
+    }
+    %>
     <div class="post-thumbnail">
-      <% if (post.featured_image) { %>
-      <a href="<%- url_for(post.path) %>"
+      <a href="<%- url_for(post.path) %>" tabindex="-1" aria-hidden="true"
         ><img
-          src="<%- post.featured_image %>"
-          alt="<%= post.title || '(no title)' %>"
-          class="scale"
-          data-scale="best-fill"
-          data-align="center"
+          src="<%- thumbnail %>"
+          alt=""
+          loading="lazy"
+          decoding="async"
       /></a>
-      <% } else if(post.photos && post.photos.length >= 1) { %>
-      <a href="<%- url_for(post.path) %>"
-        ><img
-          src="<%- url_for(post.photos[0].split('|')[0]) %>"
-          alt="<%= post.title || '(no title)' %>"
-          class="scale"
-          data-scale="best-fill"
-          data-align="center"
-      /></a>
-      <% } else { %>
-      <a href="<%- url_for(post.path) %>"
-        ><img
-          src="/images/blog/default-post.jpg"
-          alt="<%= post.title || '(no title)' %>"
-          class="scale"
-          data-scale="best-fill"
-          data-align="center"
-      /></a>
-      <% } %>
     </div>
     <span><img src="/images/SCLogo-Transparent.svg" alt="" /></span>
   </div>
