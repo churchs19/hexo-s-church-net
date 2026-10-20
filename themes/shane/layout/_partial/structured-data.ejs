@@ -42,33 +42,18 @@
 		}
 	</script>
 <% } else { %>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "url": "<%= config.url %>",
-  <% if (config.site_logo) { %>
-  "logo": "<%= config.url %>/<%= config.site_logo %>",
-  <% } %>
-  "name": "<%= config.author %>",
-  <% if (config.phone) { %>
-  "telephone": "<%= config.phone %>"
-  <% } %>
-  <% if (config.email) { %>
-  ,
-  "email": "<%= config.email %>"
-  <% } %>
-  <% if (config.social) { %>
-  ,
-  "sameAs": [
-<% for (var i = 0; i < config.social.length; i++) { %>    
-  <% if (i > 0) { %>
-    ,
-  <% } %>
-  	"<%= config.social[i] %>"
-<% } %>
-  ]
-  <% } %>
-}
-</script>
+<%
+var person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": config.author,
+  "url": config.url,
+  "jobTitle": config.subtitle,
+  "description": config.description
+};
+if (config.site_logo) person.image = config.url + '/' + config.site_logo;
+if (config.email) person.email = 'mailto:' + config.email;
+if (config.social) person.sameAs = config.social;
+%>
+<script type="application/ld+json"><%- JSON.stringify(person, null, 2).replace(/</g, '\\u003c') %></script>
 <% } %>

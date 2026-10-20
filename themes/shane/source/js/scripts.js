@@ -81,85 +81,113 @@ jQuery(function ($) {
   // SHARE LINKS
   // -------------------------------------------------------------
   $(document).ready(function () {
+    var shareNetworks = [
+      ["Bluesky", "fa-bluesky", function (url, title) {
+        return "https://bsky.app/intent/compose?text=" + encodeURIComponent(title + " " + url);
+      }],
+      ["LinkedIn", "fa-linkedin", function (url) {
+        return "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+      }],
+      ["Facebook", "fa-facebook", function (url) {
+        return "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(url);
+      }],
+    ];
+
+    var closeShareBoxes = function () {
+      $(".article-share-box.on").removeClass("on");
+      $(".article-share-link[aria-expanded=true]").attr("aria-expanded", "false");
+    };
+
+    var buildShareBox = function (id, url, title) {
+      var box = $('<div class="article-share-box" role="dialog" aria-label="Share this post"></div>')
+        .attr("id", id)
+        .attr("data-url", url);
+      var links = $('<div class="article-share-links"></div>');
+
+      shareNetworks.forEach(function (network) {
+        links.append(
+          $('<a class="article-share-network" target="_blank" rel="noopener"></a>')
+            .attr({
+              href: network[2](url, title),
+              title: network[0],
+              "aria-label": "Share on " + network[0],
+            })
+            .append('<i class="fa-brands ' + network[1] + '" aria-hidden="true"></i>')
+        );
+      });
+      links.append(
+        '<button type="button" class="article-share-copy">' +
+          '<i class="fa-solid fa-link" aria-hidden="true"></i> <span>Copy link</span>' +
+          "</button>"
+      );
+
+      return box.append(links).appendTo("body");
+    };
+
     $("body")
-      .on("click", function () {
-        $(".article-share-box.on").removeClass("on");
+      .on("click", closeShareBoxes)
+      .on("keydown", function (e) {
+        if (e.key === "Escape") {
+          var opener = $(".article-share-link[aria-expanded=true]");
+          closeShareBoxes();
+          opener.focus();
+        }
       })
       .on("click", ".article-share-link", function (e) {
         e.stopPropagation();
 
         var $this = $(this),
           url = $this.attr("data-url"),
-          encodedUrl = encodeURIComponent(url),
+          title = $this.attr("data-title") || document.title,
           id = "article-share-box-" + $this.attr("data-id"),
-          offset = $this.offset(),
-          box;
-
-        if ($("#" + id).length) {
           box = $("#" + id);
 
-          if (box.hasClass("on")) {
-            box.removeClass("on");
-            return;
-          }
-        } else {
-          var html = [
-            '<div id="' + id + '" class="article-share-box">',
-            '<input class="article-share-input" value="' + url + '">',
-            '<div class="article-share-links">',
-            '<a href="https://twitter.com/intent/tweet?url=' +
-              encodedUrl +
-              '" class="article-share-twitter" data-social-network="Twitter" data-social-action="tweet" data-social-target="' +
-              encodedUrl +
-              '" target="_blank" title="Twitter"></a>',
-            '<a href="https://www.facebook.com/sharer.php?u=' +
-              encodedUrl +
-              '" class="article-share-facebook" data-social-network="Facebook" data-social-action="share" data-social-target="' +
-              encodedUrl +
-              '" target="_blank" title="Facebook"></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' +
-              encodedUrl +
-              '" class="article-share-pinterest" data-social-network="Pinterest" data-social-action="pin" data-social-target="' +
-              encodedUrl +
-              '" target="_blank" title="Pinterest"></a>',
-            '<a href="https://plus.google.com/share?url=' +
-              encodedUrl +
-              '" class="article-share-google" data-social-network="Google+" data-social-action="share" data-social-target="' +
-              encodedUrl +
-              '" target="_blank" title="Google+"></a>',
-            "</div>",
-            "</div>",
-          ].join("");
-
-          box = $(html);
-
-          $("body").append(box);
+        if (navigator.share) {
+          navigator.share({ title: title, url: url }).catch(function () {});
+          return;
         }
 
-        $(".article-share-box.on").hide();
+        if (box.hasClass("on")) {
+          closeShareBoxes();
+          return;
+        }
+        closeShareBoxes();
 
-        box
-          .css({
-            top: offset.top + 25,
-            left: offset.left + box.width() / 2 - $this.width() / 2,
-          })
-          .addClass("on");
+        if (!box.length) {
+          box = buildShareBox(id, url, title);
+        }
+
+        var offset = $this.offset();
+        box.addClass("on").css({
+          top: offset.top + $this.outerHeight() + 6,
+          left: Math.max(
+            8,
+            Math.min(offset.left, $(window).width() - box.outerWidth() - 8)
+          ),
+        });
+        $this.attr({ "aria-expanded": "true", "aria-controls": id });
+        box.find("a, button").first().focus();
       })
       .on("click", ".article-share-box", function (e) {
         e.stopPropagation();
       })
-      .on("click", ".article-share-box-input", function () {
-        $(this).select();
-      })
-      .on("click", ".article-share-box-link", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+      .on("click", ".article-share-copy", function () {
+        var $button = $(this),
+          url = $button.closest(".article-share-box").attr("data-url"),
+          done = function () {
+            $button.find("span").text("Copied!");
+            setTimeout(function () {
+              $button.find("span").text("Copy link");
+            }, 2000);
+          };
 
-        window.open(
-          this.href,
-          "article-share-box-window-" + Date.now(),
-          "width=500,height=450"
-        );
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done, function () {
+            window.prompt("Copy this link:", url);
+          });
+        } else {
+          window.prompt("Copy this link:", url);
+        }
       });
   });
 

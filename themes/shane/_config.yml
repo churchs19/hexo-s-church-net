@@ -14,7 +14,7 @@ widgets:
 - tagcloud
 
 # widget behavior
-archive_type: 'monthly'
+archive_type: 'yearly'
 show_count: true
 
 # Miscellaneous
