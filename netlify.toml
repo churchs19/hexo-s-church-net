@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "public"
 
+[build.environment]
+  # Hexo 8 needs Node.js 20.19 or newer
+  NODE_VERSION = "22"
+
 [functions."daily-rebuild"]
   schedule = "0 0 * * *"
 
