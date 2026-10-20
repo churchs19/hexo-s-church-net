@@ -24,8 +24,7 @@
       }
     </style>
 
- <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
- <link href="css/bootstrap-responsive.css" rel="stylesheet">
+ <link href="css/base.css" rel="stylesheet">
  <link href="css/main.css" rel="stylesheet">
   </head>
 
@@ -133,12 +132,10 @@
     </div><!--/.fluid-container-->
 
 
-    <script src="js/jquery.min.js"></script> 
-    <script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 		<script>
 		var screenSize = 0;
-		window.onload=function(){  screenSize = $(window).width();}
+		window.onload=function(){  screenSize = document.documentElement.clientWidth;}
 	</script>
   </body>
 </html>
