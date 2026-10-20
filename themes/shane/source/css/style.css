@@ -1408,6 +1408,24 @@ Resume Timeline
   background-size: cover;  
 }
 
+.gallery-cell.lego-movehub {
+  background: url("../../images/lego-movehub-home-bg.jpg") no-repeat right
+    center;
+  background-size: cover;
+}
+
+.gallery-cell.dinner-delights {
+  background: url("../../images/dinner-delights-home-bg.jpg") no-repeat
+    center center;
+  background-size: cover;
+}
+
+.gallery-cell.older-projects {
+  background: url("../../images/older-projects-home-bg.jpg") no-repeat center
+    center;
+  background-size: cover;
+}
+
 /* === Facts Section === */
 
 .facts-section {

@@ -23,6 +23,4 @@ Features:
 * Share your birthday greetings on social networks  
 * Fully localized into 38 languages 
 
-Available for $1.49 with an unlimited, ad-supported free trial.
-
-[![Download on Windows Phone](/images/WindowsPhone_208x67_blu.png)](http://windowsphone.com/s?appid=b3f595ea-10ba-4b1c-8833-3b299078010d)
+*This app is no longer available. It was sold through the Windows Phone Store, which has been shut down. See [Older Projects](/OlderProjects/) for more.*

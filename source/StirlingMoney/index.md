@@ -28,6 +28,4 @@ Features:
 * Full support for all Windows Phone 8 screen resolutions and tile sizes 
 * Machine translated into 37 languages  
 
-Unlimited trial is fully featured and ad supported.
-
-[![Download on Windows Phone](/images/WindowsPhone_208x67_blu.png)](http://windowsphone.com/s?appid=c81aa8df-5dd6-4afe-b0eb-58a824581535)
+*This app is no longer available. It was sold through the Windows Phone Store, which has been shut down. See [Older Projects](/OlderProjects/) for more.*

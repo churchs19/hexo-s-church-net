@@ -25,6 +25,4 @@ Want to keep track of what you eat but don't want all of the calorie databases a
 * Full Windows Phone 8 Support
 * Machine translated for broad localization!
 
-Completely free!
-
-[![Download on Windows Phone](/images/WindowsPhone_208x67_blu.png)](http://www.windowsphone.com/s?appid=225b965d-d41f-440b-9e56-f03a550052e8)
+*This app is no longer available. It was sold through the Windows Phone Store, which has been shut down. See [Older Projects](/OlderProjects/) for more.*
