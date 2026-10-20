@@ -837,7 +837,7 @@ iframe.instagram-media {
   display: none;
 }
 
-/* Touch devices have no hover, so keep a one-line caption visible */
+/* Touch devices have no hover, so keep a two-line caption visible */
 @media (hover: none) {
   .photos-section figcaption {
     top: auto;
@@ -859,8 +859,8 @@ iframe.instagram-media {
   }
 
   .photos-section figcaption a p:first-of-type {
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     font-size: 12px;
     text-transform: none;
   }
